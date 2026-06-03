@@ -1,4 +1,4 @@
-import type {ReactNode} from "react";
+import type { ReactNode } from "react";
 
 type buttonProps = {
   children: ReactNode;
@@ -20,10 +20,10 @@ export default function Button({children, primary = false, link = false}: button
         ${primary
           ? "shadow-emerald-700 dark:shadow-amber-800 active:translate-y-[3px]"
           : "shadow-none"}
-        shadow-[0_3px_0_0] active:shadow-none transition duration-100
+        shadow-[0_3px_0_0] active:shadow-none transition duration-75
         ${primary
-          ? "hover:bg-emerald-500 hover:border-emerald-500 hover:dark:bg-amber-600 hover:dark:border-amber-600"
-          : "hover:bg-emerald-200 hover:dark:bg-taupe-700/50"}
+            ? "hover:bg-emerald-500 hover:border-emerald-500 hover:dark:bg-amber-600 hover:dark:border-amber-600"
+            : "hover:bg-emerald-200/50 hover:dark:bg-taupe-700/50"}
         `}
       >
         {children}
