@@ -1,5 +1,6 @@
 import { H1, H2, Para } from "./components/Text";
 import Button from "./components/Button";
+import { List, ListItem } from "./components/Lists"
 
 //          DARK     LIGHT-1      LIGHT-2
 // bg1   taupe-900  olive-200    taupe-400
@@ -17,12 +18,13 @@ import Button from "./components/Button";
 // like instead of amber-950 it would be taupe-800
 
 export default function App() {
-  return (<>
-    <div className={`flex flex-col align-top justify-start p-6 m-4 gap-6 rounded-xl bg-olive-50 dark:bg-taupe-800`}>
+  return (
+  <section className="flex flex-col p-4 gap-4">
+    <div className={`flex flex-col align-top justify-start p-6 gap-6 rounded-xl bg-olive-50 dark:bg-taupe-800`}>
       <div className={"flex flex-col align-top justify-start gap-2"}>
         <H1>Hi there</H1>
         <H2>About</H2>
-        <Para>I'm testing using little pre-styled components for text. It seems to be working really well :)</Para>
+        <Para>I'm testing using little pre-styled components for text, buttons, lists, and more. It seems to be working really well with React and Tailwind CSS :)</Para>
         <H2>Lots of stuff</H2>
         <Para>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien mi, pulvinar vel consequat quis, varius eget leo. Aenean ut sapien nisi. Ut finibus dolor ac quam euismod, a dignissim elit placerat. Ut nec orci id odio euismod volutpat quis aliquet ipsum. Aliquam dapibus condimentum volutpat. Mauris eu felis justo.</Para>
         <div className="flex flex-col gap-3 my-4">
@@ -31,5 +33,17 @@ export default function App() {
         </div>
       </div>
     </div>
-  </>)
+    <List>
+      <ListItem>
+        Wow look
+      </ListItem>
+      <ListItem>
+        It's an unordered list
+      </ListItem>
+      <ListItem>
+        I'll use these to add players and show their answers
+      </ListItem>
+    </List>
+  </section>
+  )
 }
