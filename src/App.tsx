@@ -17,31 +17,10 @@ import Button from "./components/Button";
 // like instead of amber-950 it would be taupe-800
 
 export default function App() {
-    
-  const LightFgColor = "emerald";
-  const LightBgColor = "olive";
-  
-  const DarkFgColor = "amber";
-  const DarkBgColor = "taupe";
-  
   return (<>
-    <div className={`flex flex-col align-top justify-start p-6 m-4 gap-6 rounded-xl bg-${LightBgColor}-50 dark:bg-${DarkBgColor}-800`}>
+    <div className={`flex flex-col align-top justify-start p-6 m-4 gap-6 rounded-xl bg-olive-50 dark:bg-taupe-800`}>
       <div className={"flex flex-col align-top justify-start gap-2"}>
-        <h1 className={`text-4xl font-bold tracking-wider text-${LightFgColor}-700 dark:text-${DarkFgColor}-500`}>Hi there</h1>
-        <h2 className={`text-2xl font-bold text-${LightFgColor}-600 dark:text-${DarkFgColor}-600`}>guh</h2>
-        <p className={`text-lg text-${LightFgColor}-900 dark:text-${DarkFgColor}-100`}>I'm currently trying to use Tailwind CSS</p>
-      </div>
-      <a
-        href={"https://soupcat.vercel.app"} target={"_blank"}
-        className={`rounded-full w-max bg-${LightFgColor}-400 dark:bg-${DarkFgColor}-500 text-black py-2 px-6 shadow-md transition-transform  hover:scale-105`}
-      >
-        A button!
-      </a>
-    </div>
-
-    <div className={`flex flex-col align-top justify-start p-6 m-4 gap-6 rounded-xl bg-${LightBgColor}-50 dark:bg-${DarkBgColor}-800`}>
-      <div className={"flex flex-col align-top justify-start gap-2"}>
-        <H1>Look another card</H1>
+        <H1>Hi there</H1>
         <H2>About</H2>
         <Para>I'm testing using little pre-styled components for text. It seems to be working really well :)</Para>
         <H2>Lots of stuff</H2>
