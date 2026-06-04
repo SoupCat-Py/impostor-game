@@ -19,18 +19,14 @@ import { List, ListItem } from "./components/Lists"
 
 export default function App() {
   return (
-  <section className="flex flex-col p-4 gap-4">
-    <div className={`flex flex-col align-top justify-start p-6 gap-6 rounded-xl bg-olive-50 dark:bg-taupe-800`}>
+  <section className="flex flex-col p-4 gap-6">
+    <div className={`flex flex-col align-top justify-start p-6 gap-6 rounded-2xl bg-olive-50 dark:bg-taupe-800`}>
       <div className={"flex flex-col align-top justify-start gap-2"}>
-        <H1>Hi there</H1>
+        <H1>Component Playground</H1>
         <H2>About</H2>
         <Para>I'm testing using little pre-styled components for text, buttons, lists, and more. It seems to be working really well with React and Tailwind CSS :)</Para>
         <H2>Lots of stuff</H2>
         <Para>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien mi, pulvinar vel consequat quis, varius eget leo. Aenean ut sapien nisi. Ut finibus dolor ac quam euismod, a dignissim elit placerat. Ut nec orci id odio euismod volutpat quis aliquet ipsum. Aliquam dapibus condimentum volutpat. Mauris eu felis justo.</Para>
-        <div className="flex flex-col gap-3 my-4">
-          <Button link primary>primary button</Button>
-          <Button link>secondary button</Button>
-        </div>
       </div>
     </div>
     <List>
@@ -44,6 +40,10 @@ export default function App() {
         I'll use these to add players and show their answers
       </ListItem>
     </List>
+    <div className="flex flex-col gap-3">
+      <Button link primary>primary button</Button>
+      <Button link>secondary button</Button>
+    </div>
   </section>
   )
 }
