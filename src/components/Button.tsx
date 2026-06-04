@@ -3,14 +3,13 @@ import type { ReactNode } from "react";
 type buttonProps = {
   children: ReactNode;
   primary?: boolean;
-  link?: boolean;
+  icon?: ReactNode;
 }
 
-export default function Button({children, primary = false, link = false}: buttonProps) {
-  if (link) {
+export default function Button({children, primary = false, icon}: buttonProps) {
     return (
-      <a className={`
-        flex justify-center items-center py-2 w-full
+      <button className={`
+        flex justify-center items-center py-2 gap-1 w-full
         rounded-full font-bold border-3 
         cursor-pointer select-none
         ${primary
@@ -26,8 +25,17 @@ export default function Button({children, primary = false, link = false}: button
             : "hover:bg-emerald-200/50 hover:dark:bg-taupe-700/50"}
         `}
       >
+        {icon
+            ?<svg
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none"stroke="currentColor" stroke-width={primary?"3":"2"} stroke-linecap="round" stroke-linejoin="round"
+                className="h-5"
+            >
+                {icon}
+            </svg>
+            :null
+        }
         {children}
-      </a>
+      </button>
     )
-  }
 }
