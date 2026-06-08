@@ -34,3 +34,11 @@ export function Para({children}:TextProps) {
     </p>
   )
 }
+
+export function Small({children}:TextProps) {
+  return (
+    <p className="text-sm text-emerald-950 dark:text-taupe-400">
+      {children}
+    </p>
+  )
+}
