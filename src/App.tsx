@@ -41,10 +41,18 @@ export default function App() {
       </ListItem>
     </List>
     <div className="flex flex-col gap-3">
-      <Button primary icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></>}>
+      <Button
+        label="Do you dare click the button?"
+        primary
+        onClickFunction={() => alert("you pressed the button!")}
+        icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></>}
+      >
         primary button
       </Button>
-      <Button icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></>}>
+      <Button
+        icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></>}
+        onClickFunction={() => alert("hi")}
+      >
         secondary button
       </Button>
     </div>
