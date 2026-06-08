@@ -19,19 +19,20 @@ export default function Button({label, children, primary = false, icon, onClickF
         onClick={onClickFunction}
         className={`
             flex justify-center items-center py-2 gap-1 w-full
-            rounded-full font-bold border-3 
+            rounded-full font-bold
+            focus-visible:outline-3 outline-offset-4 outline-emerald-800 dark:outline-amber-200
             cursor-pointer select-none
             ${primary
-            ? "bg-emerald-400 border-emerald-400 dark:bg-amber-500 dark:border-amber-500 text-white dark:text-black"
-            : "bg-none border-emerald-700 dark:border-amber-100 text-emerald-700 dark:text-amber-100"
+            ? "bg-emerald-400 dark:bg-amber-500 dark:border-amber-500 text-white dark:text-black"
+            : "bg-emerald-50 dark:bg-taupe-800 text-emerald-800 dark:text-amber-500"
             }
             ${primary
             ? "shadow-emerald-700 dark:shadow-amber-800 active:translate-y-[3px]"
-            : "shadow-none"}
+            : "shadow-none active:bg-emerald-50 dark:active:bg-taupe-800"}
             shadow-[0_3px_0_0] active:shadow-none transition duration-75
             ${primary
                 ? "hover:bg-emerald-500 hover:border-emerald-500 hover:dark:bg-amber-600 hover:dark:border-amber-600"
-                : "hover:bg-emerald-200/50 hover:dark:bg-taupe-700/50"}
+                : "hover:bg-olive-300 hover:dark:bg-taupe-700"}
             `}
         >
             {icon

@@ -37,7 +37,7 @@ export function Para({children}:TextProps) {
 
 export function Small({children}:TextProps) {
   return (
-    <p className="text-sm text-emerald-950 dark:text-taupe-400">
+    <p className="text-sm text-emerald-800 dark:text-taupe-400">
       {children}
     </p>
   )
