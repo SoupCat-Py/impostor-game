@@ -41,14 +41,8 @@ export default function App() {
             stroke-linecap="round" stroke-linejoin="round"
             className="h-5 text-taupe-400"
           >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l11 0" />
-            <path d="M9 12l11 0" />
-            <path d="M9 18l11 0" />
-            <path d="M5 6l0 .01" />
-            <path d="M5 12l0 .01" />
-            <path d="M5 18l0 .01" />
-            </svg>
+            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 8v4" /><path d="M12 16h.01" />
+          </svg>
           <Para>It's an unordered list</Para>
         </div>
       </ListItem>
@@ -61,34 +55,42 @@ export default function App() {
       <Button
         label="Do you dare click the button?"
         primary
-        onClickFunction={() => alert("you pressed the button!")}
-        icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></>}
+        icon={<><path d="M7 4v16l13 -8l-13 -8" /></>}
+        onClickFunction={() => alert("this button worked!")}
       >
         primary button
       </Button>
       <Button
-        icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></>}
+        primary
+        isDisabled
+        icon={<><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M18.364 5.636l-12.728 12.728" /></>}
+      >
+        disabled primary button
+      </Button>
+      <Button
+        icon={<><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" /><path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39" /></>}
         onClickFunction={() => alert("hi")}
       >
         secondary button
       </Button>
       <Button
-        icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></>}
+        icon={<><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></>}
         onClickFunction={() => alert("hi")}
       >
         secondary button
       </Button>
       <Button
-        icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></>}
+        icon={<><path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /><path d="M19 16h-12a2 2 0 0 0 -2 2" /><path d="M9 8h6" /></>}
         onClickFunction={() => alert("hi")}
       >
         secondary button
       </Button>
       <Button
-        icon={<><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></>}
+        icon={<><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></>}
         onClickFunction={() => alert("hi")}
+        isDisabled
       >
-        secondary button
+        disabled secondary button
       </Button>
     </div>
   </section>
