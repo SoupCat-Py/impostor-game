@@ -7,7 +7,7 @@ type TextProps = {
 
 export function H1({children}:TextProps) {
   return (
-    <h1 className="text-4xl pb-2 font-bold tracking-wide text-emerald-700 dark:text-amber-500">
+    <h1 className="text-4xl pb-2 font-bold tracking-wide text-rose-700 dark:text-yellow-500">
       {children}
     </h1>
   )
@@ -21,7 +21,7 @@ export function H1({children}:TextProps) {
 
 export function H2({children}:TextProps) {
   return (
-    <h2 className="text-2xl pt-2 font-bold text-emerald-600 dark:text-amber-600">
+    <h2 className="text-2xl pt-2 font-bold text-rose-600 dark:text-yellow-600">
       {children}
     </h2>
   )
@@ -29,7 +29,7 @@ export function H2({children}:TextProps) {
 
 export function Para({children}:TextProps) {
   return (
-    <p className="text-md text-emerald-900 dark:text-amber-100">
+    <p className="text-md text-rose-900 dark:text-yellow-100">
       {children}
     </p>
   )
@@ -37,7 +37,7 @@ export function Para({children}:TextProps) {
 
 export function Small({children}:TextProps) {
   return (
-    <p className="text-sm text-emerald-800 dark:text-taupe-400">
+    <p className="text-sm text-rose-800 dark:text-taupe-400">
       {children}
     </p>
   )

@@ -14,7 +14,7 @@ export function List({ children }: ListProps) {
 
 export function ListItem({ children }: ListProps) {
     return (
-        <li className="bg-olive-50 dark:bg-taupe-800 text-emerald-900 dark:text-amber-50 p-4 mb-1 last:mb-0 rounded-md first:rounded-t-2xl last:rounded-b-2xl">
+        <li className="bg-neutral-50 dark:bg-taupe-800 text-emerald-900 dark:text-amber-50 p-4 mb-1 last:mb-0 rounded-md first:rounded-t-2xl last:rounded-b-2xl">
             {children}
         </li>
     )

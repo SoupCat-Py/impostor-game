@@ -20,7 +20,7 @@ import { List, ListItem } from "./components/Lists"
 export default function App() {
   return (
   <section className="flex flex-col p-4 gap-6">
-    <div className={`flex flex-col align-top justify-start p-6 gap-6 rounded-2xl bg-olive-50 dark:bg-taupe-800`}>
+    <div className={`flex flex-col align-top justify-start p-6 gap-6 rounded-2xl bg-neutral-50 dark:bg-taupe-800`}>
       <div className={"flex flex-col align-top justify-start gap-2"}>
         <H1>Component Playground</H1>
         <H2>About</H2>
