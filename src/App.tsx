@@ -93,6 +93,40 @@ export default function App() {
         disabled secondary button
       </Button>
     </div>
+    <div className={"h-10"}></div>
+    <div className={"flex flex-col items-center"}>
+      <Small>and the question was:</Small>
+      <H1>The actual question was this</H1>
+    </div>
+    <List>
+      <ListItem>
+        <Small>Jonny</Small>
+        <Para>Foobar</Para>
+      </ListItem>
+      <ListItem>
+        <Small>Kelton</Small>
+        <Para>The quick brown fox</Para>
+      </ListItem>
+      <ListItem>
+        <Small>Dom</Small>
+        <Para>jschlatt</Para>
+      </ListItem>
+      <ListItem>
+        <Small>Callum</Small>
+        <Para>Tailwind</Para>
+      </ListItem>
+      <ListItem>
+        <Small>Jon</Small>
+        <Para>Danny DeVito</Para>
+      </ListItem>
+    </List>
+    <Button
+      primary
+      label={"think you know who it is?"}
+      onClickFunction={() => alert("it was me >:)")}
+    >
+      Reveal the impostor
+    </Button>
   </section>
   )
 }
