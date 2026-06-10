@@ -7,7 +7,7 @@ type TextProps = {
 
 export function H1({children}:TextProps) {
   return (
-    <h1 className="text-4xl pb-2 font-bold tracking-wide text-rose-700 dark:text-yellow-500">
+    <h1 className="text-4xl pb-2 w-full text-center font-bold tracking-wide text-rose-700 dark:text-yellow-500">
       {children}
     </h1>
   )
