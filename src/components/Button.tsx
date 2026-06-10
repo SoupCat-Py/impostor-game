@@ -20,7 +20,7 @@ export default function Button({label, children, primary = false, icon, isDisabl
         onClick={onClickFunction}
         disabled={isDisabled}
         className={`
-          flex justify-center items-center py-2 gap-1 w-full
+          flex justify-center items-center py-3 gap-1 w-full
           rounded-full font-bold
           focus-visible:outline-3 outline-offset-4 outline-rose-800 dark:outline-yellow-200
           cursor-pointer select-none
