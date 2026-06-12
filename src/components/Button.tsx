@@ -10,7 +10,7 @@ type buttonProps = {
   onClickFunction?: () => void;
 }
 
-export default function Button({label, children, primary = false, icon, isDisabled=false, onClickFunction}: buttonProps) {
+export function Button({label, children, primary = false, icon, isDisabled=false, onClickFunction}: buttonProps) {
   return (
     <div className="flex flex-col justify-center items-center gap-1">
       <Small>
@@ -55,4 +55,12 @@ export default function Button({label, children, primary = false, icon, isDisabl
       </button>
     </div>
   )
+}
+
+export function ButtonGroup({children}:buttonProps) {
+    return (
+        <div className="flex flex-col gap-2 pb-4">
+            {children}
+        </div>
+    )
 }

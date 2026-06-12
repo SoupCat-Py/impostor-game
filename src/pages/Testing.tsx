@@ -1,5 +1,5 @@
 import { H1, H2, Para, Small } from "../components/Text";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import { List, ListItem } from "../components/Lists"
 
 //          DARK     LIGHT-1      LIGHT-2
