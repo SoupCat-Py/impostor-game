@@ -23,7 +23,7 @@ interface PageProps {
 export default function InstructionsPage({goToPageLowLevel}:PageProps) {
   return (
     <PageContainer>
-      <div className="flex flex-col pt-4 gap-6" id="how_to_play">
+      <div className="flex flex-col pt-4 gap-6">
         <Card>
           <H1>General Info</H1>
           <H2>About</H2>

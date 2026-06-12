@@ -11,7 +11,7 @@ export default function HomePage({goToPageLowLevel}:PageProps) {
   return (
     <PageContainer>
       <div className="pt-6">
-        <H1>Chameleon but not really YAY</H1>
+        <H1>That one game I saw on youtube but now you can play it with friends</H1>
         <img src="/baby globe.gif"/>
       </div>
       <ButtonGroup>

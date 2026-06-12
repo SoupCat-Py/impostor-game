@@ -17,6 +17,8 @@ export default function App() {
     // and does the same thing as the TopLevel one - it's just a wrapper.
     const goToPageLowLevel = (newPage: Page) => goToPageTopLevel(newPage);
 
+    // render each page IF currentPage matches it and then pass down the
+    // goToPageLowLevel wrapper into each child
     return (
         <>
         {currentPage === "Home" && <HomePage goToPageLowLevel={goToPageLowLevel}/>}
