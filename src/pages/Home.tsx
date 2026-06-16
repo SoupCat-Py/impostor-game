@@ -10,14 +10,18 @@ interface PageProps {
 export default function HomePage({goToPageLowLevel}:PageProps) {
   return (
     <PageContainer>
-      <div className="pt-6">
+      <div>
         <H1>That one game I saw on youtube but now you can play it with friends</H1>
-        <img src="/baby globe.gif"/>
+        <img
+            src="/baby globe.gif"
+            alt="the Wikipedia baby globe yay"
+        />
       </div>
       <ButtonGroup>
         <Button
           primary
           icon={<><path d="M7 4v16l13 -8l-13 -8" /></>}
+          onClickFunction={() => goToPageLowLevel("AddPlayers")}
         >
           Start Game
         </Button>

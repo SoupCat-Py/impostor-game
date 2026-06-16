@@ -23,7 +23,7 @@ interface PageProps {
 export default function InstructionsPage({goToPageLowLevel}:PageProps) {
   return (
     <PageContainer>
-      <div className="flex flex-col pt-4 gap-6">
+      <div className="flex flex-col gap-6">
         <Card>
           <H1>General Info</H1>
           <H2>About</H2>
@@ -45,6 +45,7 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
           primary
           icon={<><path d="M7 4v16l13 -8l-13 -8" /></>}
           label="All ready to play?"
+          onClickFunction={() => goToPageLowLevel("AddPlayers")}
         >
           Start Game
         </Button>

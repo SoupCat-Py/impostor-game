@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 type ListProps = {
   children: ReactNode;
+  row?: boolean;
 }
 
 export function List({ children }: ListProps) {
@@ -12,9 +13,14 @@ export function List({ children }: ListProps) {
   )
 }
 
-export function ListItem({ children }: ListProps) {
+export function ListItem({ children, row=false }: ListProps) {
   return (
-    <li className="bg-neutral-50 dark:bg-taupe-800 text-emerald-900 dark:text-amber-50 p-4 mb-1 last:mb-0 rounded-md first:rounded-t-2xl last:rounded-b-2xl">
+    <li className={`
+      flex p-4 mb-1 last:mb-0 rounded-md first:rounded-t-2xl last:rounded-b-2xl
+      ${row?"flex-row gap-2 items-center":"flex-col gap-0 items-start"}
+      bg-neutral-50 dark:bg-taupe-800 text-emerald-900 dark:text-amber-50
+    `}
+    >
       {children}
     </li>
   )
