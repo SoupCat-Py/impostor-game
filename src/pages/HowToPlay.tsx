@@ -25,6 +25,10 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
     <PageContainer>
       <div className="flex flex-col pt-4 gap-6">
         <Card>
+          <H2 noPadding>Note:</H2>
+          <Para>I do not save or collect <strong>any</strong> data. Everything will reset if you reload the page.</Para>
+        </Card>
+        <Card>
           <H1>General Info</H1>
           <H2>About</H2>
           <Para>This is a game of answering random questions and lying to your friends. At the start of every game, everyone except the impostor will receive the same question to answer. The impostor will receive a different question that may end up with a similar answer to everyone else. It is your task to either work together and find the impostor, or to hide your identity and blend into the crowd.</Para>
