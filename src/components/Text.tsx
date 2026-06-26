@@ -2,6 +2,7 @@ import type { ReactNode } from "react"
 
 type TextProps = {
   children: ReactNode;
+  noPadding?: boolean;
 }
 
 
@@ -19,9 +20,9 @@ export function H1({children}:TextProps) {
 // For now, it helps distinguish subheaders from each other but
 // may introduce some problems later so be aware of  that
 
-export function H2({children}:TextProps) {
+export function H2({children, noPadding=false}:TextProps) {
   return (
-    <h2 className="text-2xl pt-4 pb-1 font-bold text-rose-600 dark:text-yellow-600">
+    <h2 className={`text-2xl ${noPadding?"":"pt-4"} pb-1 font-bold text-rose-600 dark:text-yellow-600`}>
       {children}
     </h2>
   )
