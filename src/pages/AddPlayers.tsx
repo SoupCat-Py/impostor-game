@@ -25,10 +25,6 @@ function RemovePlayerButton() {
   )
 }
 
-function Spacer() {
-  return (<div className={"w-6"}></div>)
-}
-
 export default function AddPlayersPage({goToPageLowLevel}: PageProps) {
   return (
       <PageContainer>
