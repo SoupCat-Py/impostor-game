@@ -75,6 +75,19 @@ export default function App() {
   }
 
 
+  // time to decide how many impostors there will be - starting at 1 as default
+  const [impostorCount, setImpostorCount] = useState(1);
+
+  const callIncrementImpostorCount = (direction:string) => {
+    if (direction === "increase" && impostorCount < playerList.length) {
+      setImpostorCount(prev => prev + 1);
+    }
+    else if (direction === "decrease" && impostorCount > 0) {
+      setImpostorCount(prev => prev - 1);
+    }
+  }
+
+
   // render each page IF currentPage matches it and then pass down the
   // goToPageLowLevel wrapper into each child
   return (
@@ -82,8 +95,19 @@ export default function App() {
       {/*also passing down functions to each page*/}
       {currentPage === "Home" && <HomePage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "HowToPlay" && <InstructionsPage goToPageLowLevel={goToPageLowLevel}/>}
-      {currentPage === "AddPlayers" && <AddPlayersPage goToPageLowLevel={goToPageLowLevel} playerList={playerList} callAddPlayer={callAddPlayer} callUpdatePlayerName={callUpdatePlayerName} callRemovePlayer={callRemovePlayer}/>}
-	    {currentPage === "SelectImpostors" && <SelectImpostorsPage goToPageLowLevel={goToPageLowLevel}/>}
+      {currentPage === "AddPlayers" && <AddPlayersPage
+          goToPageLowLevel={goToPageLowLevel}
+          playerList={playerList}
+          callAddPlayer={callAddPlayer}
+          callUpdatePlayerName={callUpdatePlayerName}
+          callRemovePlayer={callRemovePlayer}
+      />}
+	    {currentPage === "SelectImpostors" && <SelectImpostorsPage
+          goToPageLowLevel={goToPageLowLevel}
+          callIncrementImpostorCount={callIncrementImpostorCount}
+          impostorCount={impostorCount}
+          maxImpostorCount={playerList.length - 1}
+      />}
     </main>
   )
 }

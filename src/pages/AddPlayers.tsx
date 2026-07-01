@@ -12,6 +12,8 @@ type PageProps = {
   callRemovePlayer: (index: number) => void;
 }
 
+// TODO:
+// [] disable "next" button if player count is zero
 
 function RemovePlayerButton({ onRemove }: {onRemove: () => void;}) {
   return (
