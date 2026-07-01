@@ -11,10 +11,10 @@ export type Page = "Home" | "HowToPlay" | "AddPlayers"
 export interface playerData {
 	name: string;
 	isImpostor: boolean;
-	answer: boolean;
+	answer: string;
 }
 export interface gameData {
-	playerList: PlayerData[];  // this means an array of player objects
+	playerList: playerData[];  // this means an array of player objects
 	impostorCount: number;
 	realQuestion: string;
 	impostorQuestion: string;
@@ -22,6 +22,7 @@ export interface gameData {
 	// Might pull them from Full Squad (give them attribution)
 	// as well as making my own 🤔
 }
+
 
 export default function App() {
 
@@ -41,17 +42,36 @@ export default function App() {
   };
   // i also gave it a little delay so that you can see the button animation
 
+
   // this is the React state where players will be handled
   // all data must follow the PlayerData scheme ↓
-  const [playerList, setPlayers] = useState<PlayerData[]>([]);
+  const [playerList, setPlayers] = useState<playerData[]>([]);
   // 					this is the initial value - empty ↑
 
   // this is the function to add players that will be passed down into AddPlayersPage
-  const addPlayer = () => {
+  // it's the one that gets passed down.
+  const callAddPlayer = () => {
   	setPlayers(prev => [...prev, {name:"", isImpostor:false, answer:""}]);
   	// prev is all the existing data - function just adds on top
   	// all their data is empty/default values too
   }
+
+  // This is the thing that updates player names based on what the user types.
+  // This function controls the input instead of the browser, so it's required
+  // to actually use the input.
+  const callUpdatePlayerName = (index:number, name:string) => {
+    // is this the index we want to update? if yes, add overwrite the name - if no, return as-is
+  	setPlayers(prev => prev.map((player, editingIndex) => editingIndex === index ? {...player, name} : player));
+  	// take previous list and map the new stuff onto it
+  }
+  // basically, the function goes through every player in the list (prev) and for the one at
+  // the right index, overwrite only its name.
+
+  const callRemovePlayer = (index:number) => {
+  	setPlayers(prev => prev.filter((targetIndex) => index !== targetIndex));
+  	// keep all the players except the one that matches the target index
+  }
+
 
   // render each page IF currentPage matches it and then pass down the
   // goToPageLowLevel wrapper into each child
@@ -60,7 +80,7 @@ export default function App() {
       {/*also passing down functions to each page*/}
       {currentPage === "Home" && <HomePage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "HowToPlay" && <InstructionsPage goToPageLowLevel={goToPageLowLevel}/>}
-      {currentPage === "AddPlayers" && <AddPlayersPage goToPageLowLevel={goToPageLowLevel} playerList={playerList} addPlayers={addPlayer}/>}
+      {currentPage === "AddPlayers" && <AddPlayersPage goToPageLowLevel={goToPageLowLevel} playerList={playerList} callAddPlayer={callAddPlayer} callUpdatePlayerName={callUpdatePlayerName}/>}
     </>
   )
 }
