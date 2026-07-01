@@ -3,12 +3,14 @@ import { Small,H1 } from "../components/Text.tsx"
 import { ButtonGroup, Button } from "../components/Button.tsx"
 import type { Page } from "../App.tsx"
 import type { ReactNode } from "react";
+import { useState } from "react";
 
 type PageProps = {
 	goToPageLowLevel: (newPage:Page) => void;
 	callIncrementImpostorCount: (direction:string) => void;
 	impostorCount: number;
 	maxImpostorCount: number;
+	callSetRandomImpostorCount: () => void;
 }
 
 function IncrementIcon({icon}:{icon:ReactNode}) {
@@ -21,7 +23,11 @@ function IncrementIcon({icon}:{icon:ReactNode}) {
 	)
 }
 
-export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpostorCount, impostorCount, maxImpostorCount}: PageProps) {
+export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpostorCount, impostorCount, maxImpostorCount, callSetRandomImpostorCount}: PageProps) {
+
+	// this is to hide the real impostor count when the user clicks "surprise us"
+	const [countHidden, setCountHidden] = useState<boolean>(false);
+
 	return (
 			<PageContainer>
 
@@ -42,17 +48,17 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 					<div className={"flex flex-col items-center w-3/4 gap-4 mt-8"}>
 						<div className={"flex flex-row gap-1 w-full"}>
 							<button
-									disabled={impostorCount === 1}
+									disabled={impostorCount === 1 || countHidden}
 									className={"px-8 rounded-l-2xl rounded-r-md text-4xl text-rose-900 dark:text-yellow-100 bg-neutral-50 enabled:hover:bg-neutral-100 dark:bg-taupe-800 enabled:dark:hover:bg-taupe-700 disabled:bg-neutral-200 disabled:dark:bg-neutral-700 enabled:cursor-pointer"}
 									onClick={() => callIncrementImpostorCount("decrease")}
 							>
 								<IncrementIcon icon={<path d="M5 12l14 0" />}/>
 							</button>
 							<div className={"flex justify-center items-center px-8 py-4 w-full rounded-md text-4xl select-none text-rose-900 dark:text-yellow-100 bg-neutral-50 dark:bg-taupe-800"}>
-								<span>{impostorCount}</span>
+								<span>{!countHidden?impostorCount:"?"}</span>
 							</div>
 							<button
-									disabled={impostorCount === maxImpostorCount}
+									disabled={impostorCount === maxImpostorCount || countHidden}
 									className={"px-8 rounded-r-2xl rounded-l-md text-4xl text-rose-900 dark:text-yellow-100 bg-neutral-50 enabled:hover:bg-neutral-100 dark:bg-taupe-800 enabled:dark:hover:bg-taupe-700 disabled:bg-neutral-200 disabled:dark:bg-neutral-700 enabled:cursor-pointer"}
 									onClick={() => callIncrementImpostorCount("increase")}
 							>
@@ -62,6 +68,11 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 						<div className={"w-full"}>
 							<Button
 								icon={<><path d="M3 9a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1l0 -2" /><path d="M12 8l0 13" /><path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" /></>}
+								onClickFunction={() => {
+									setCountHidden(true);
+									callSetRandomImpostorCount();
+									// TODO: add the start game function
+								}}
 							>
 									Surprise Us!
 							</Button>

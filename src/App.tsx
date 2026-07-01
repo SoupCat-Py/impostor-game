@@ -88,6 +88,12 @@ export default function App() {
     // this logic lowkey kind of sucks but it gets the job done
   }
 
+  // returns a random number between zero and TOTAL player count
+  // everybody could be the impostor... >:)
+  const callSetRandomImpostorCount = () => {
+    setImpostorCount(Math.floor(Math.random() * playerList.length))
+  }
+
 
   // render each page IF currentPage matches it and then pass down the
   // goToPageLowLevel wrapper into each child
@@ -108,6 +114,7 @@ export default function App() {
           callIncrementImpostorCount={callIncrementImpostorCount}
           impostorCount={impostorCount}
           maxImpostorCount={playerList.length - 1}
+          callSetRandomImpostorCount={callSetRandomImpostorCount}
       />}
     </main>
   )
