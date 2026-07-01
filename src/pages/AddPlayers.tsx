@@ -1,11 +1,13 @@
-import type { Page } from "../App.tsx";
+import type { Page, playerData } from "../App.tsx";
 import PageContainer from "../components/PageContainer.tsx";
 import { H1, Para, Small } from "../components/Text.tsx";
 import { List, ListItem } from "../components/Lists.tsx";
 import { ButtonGroup, Button } from "../components/Button.tsx";
 
 interface PageProps {
-  goToPageLowLevel: (newPage: Page) => void;
+  goToPageLowLevel: (newPage: Page) => void;  // function that takes newPage as Page type
+  playerList: playerData[];
+  addPlayer: () => void;  // a function with no params
 }
 
 function RemovePlayerButton() {
@@ -25,7 +27,7 @@ function RemovePlayerButton() {
   )
 }
 
-export default function AddPlayersPage({goToPageLowLevel}: PageProps) {
+export default function AddPlayersPage({goToPageLowLevel, playerList, addPlayer}: PageProps) {
   return (
       <PageContainer>
         <div className="flex flex-col gap-6">
