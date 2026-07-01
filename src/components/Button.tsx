@@ -3,7 +3,7 @@ import { Small } from "./Text"
 
 type buttonProps = {
   label?: string;
-  children: ReactNode;
+  children?: ReactNode;
   primary?: boolean;
   icon?: ReactNode;
   isDisabled?: boolean;
