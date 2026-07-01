@@ -14,15 +14,15 @@ export interface playerData {
 	isImpostor: boolean;
 	answer: string;
 }
-export interface gameData {
-	playerList: playerData[];  // this means an array of player objects
-	impostorCount: number;
-	realQuestion: string;
-	impostorQuestion: string;
+//export interface gameData {
+//	playerList: playerData[];  // this means an array of player objects
+//	impostorCount: number;
+//	realQuestion: string;
+//	impostorQuestion: string;
 	// I'm gonna make a huge JSON file full of questions later.
 	// Might pull them from Full Squad (give them attribution)
 	// as well as making my own 🤔
-}
+//}
 
 
 export default function App() {
@@ -85,6 +85,7 @@ export default function App() {
     else if (direction === "decrease" && impostorCount > 0) {
       setImpostorCount(prev => prev - 1);
     }
+    // this logic lowkey kind of sucks but it gets the job done
   }
 
 
