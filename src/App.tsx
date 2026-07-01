@@ -68,8 +68,9 @@ export default function App() {
   // the right index, overwrite only its name.
 
   const callRemovePlayer = (index:number) => {
-  	setPlayers(prev => prev.filter((targetIndex) => index !== targetIndex));
   	// keep all the players except the one that matches the target index
+  	setPlayers(prev => prev.filter((_,targetIndex) => index !== targetIndex));
+  	// don't ask why you need the underscore...
   }
 
 
@@ -80,7 +81,7 @@ export default function App() {
       {/*also passing down functions to each page*/}
       {currentPage === "Home" && <HomePage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "HowToPlay" && <InstructionsPage goToPageLowLevel={goToPageLowLevel}/>}
-      {currentPage === "AddPlayers" && <AddPlayersPage goToPageLowLevel={goToPageLowLevel} playerList={playerList} callAddPlayer={callAddPlayer} callUpdatePlayerName={callUpdatePlayerName}/>}
+      {currentPage === "AddPlayers" && <AddPlayersPage goToPageLowLevel={goToPageLowLevel} playerList={playerList} callAddPlayer={callAddPlayer} callUpdatePlayerName={callUpdatePlayerName} callRemovePlayer={callRemovePlayer}/>}
     </>
   )
 }

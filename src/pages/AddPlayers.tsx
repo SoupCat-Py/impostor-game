@@ -8,15 +8,16 @@ type PageProps = {
   goToPageLowLevel: (newPage: Page) => void;  // function that takes newPage as Page type
   playerList: playerData[];
   callAddPlayer: () => void;  // a function with no params
-  callUpdatePlayerName: (index:number, name:string) => void;
+  callUpdatePlayerName: (index: number, name: string) => void;
+  callRemovePlayer: (index: number) => void;
 }
 
 
-function RemovePlayerButton() {
+function RemovePlayerButton({ onRemove }: {onRemove: () => void;}) {
   return (
       <button
           className={"absolute left-0 top-0 bottom-0 py-0.5 px-4 cursor-pointer rounded-lg"}
-          onClick={() => alert("hi")}
+          onClick={onRemove}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -29,7 +30,7 @@ function RemovePlayerButton() {
   )
 }
 
-export default function AddPlayersPage({goToPageLowLevel, playerList, callAddPlayer, callUpdatePlayerName}: PageProps) {
+export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPlayer, callUpdatePlayerName, callRemovePlayer }: PageProps) {
   return (
       <PageContainer>
       
@@ -41,7 +42,7 @@ export default function AddPlayersPage({goToPageLowLevel, playerList, callAddPla
           <List>
             {playerList.map((player,index) => (
             	<ListItem row key={index}>
-            	  <RemovePlayerButton/>
+            	  <RemovePlayerButton onRemove={() => callRemovePlayer(index)}/>
             	  <input
             	  	type="text"
             	  	value={player.name}  // the text inside is controlled by React instead of the browser
