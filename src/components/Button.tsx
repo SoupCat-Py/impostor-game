@@ -37,8 +37,8 @@ export function Button({label, children, primary = false, icon, isDisabled=false
             ? "shadow-rose-800 disabled:shadow-neutral-700 dark:shadow-yellow-700 disabled:dark:shadow-neutral-600 shadow-[0_3px_0_0] active:enabled:shadow-none active:enabled:translate-y-[3px]"
             : "shadow-none"}
           ${primary
-            ? "hover:enabled:bg-rose-600 hover:enabled:dark:bg-yellow-600"
-            : "hover:enabled:bg-rose-200 hover:enabled:dark:bg-taupe-700"}
+            ? "hover:enabled:bg-rose-600 hover:enabled:dark:bg-yellow-600 active:enabled:bg-rose-600 active:enabled:dark:bg-yellow-600"
+            : "hover:enabled:bg-rose-200 hover:enabled:dark:bg-taupe-700 active:enabled:bg-rose-200 active:enabled:dark:bg-taupe-700"}
         `}
       >
         {icon
