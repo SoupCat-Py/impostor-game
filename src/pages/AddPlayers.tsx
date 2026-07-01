@@ -1,6 +1,6 @@
 import type { Page, playerData } from "../App.tsx";
 import PageContainer from "../components/PageContainer.tsx";
-import { H1, Para, Small } from "../components/Text.tsx";
+import { H1, Small } from "../components/Text.tsx";
 import { List, ListItem } from "../components/Lists.tsx";
 import { ButtonGroup, Button } from "../components/Button.tsx";
 
