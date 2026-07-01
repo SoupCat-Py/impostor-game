@@ -1,11 +1,12 @@
-import { useState } from "react"
-import HomePage from "./pages/Home"
-import InstructionsPage from "./pages/HowToPlay"
+import { useState } from "react";
+import HomePage from "./pages/Home";
+import InstructionsPage from "./pages/HowToPlay";
 import AddPlayersPage from "./pages/AddPlayers.tsx";
+import SelectImpostorsPage from "./pages/SelectImpostors.tsx";
 
 // this is used to define the only permissible values for the current page.
 // this is what TypeScript is nice for - using anything else would throw an error.
-export type Page = "Home" | "HowToPlay" | "AddPlayers"
+export type Page = "Home" | "HowToPlay" | "AddPlayers" | "SelectImpostors"
 
 // all the data types being stored in here
 export interface playerData {
@@ -82,6 +83,7 @@ export default function App() {
       {currentPage === "Home" && <HomePage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "HowToPlay" && <InstructionsPage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "AddPlayers" && <AddPlayersPage goToPageLowLevel={goToPageLowLevel} playerList={playerList} callAddPlayer={callAddPlayer} callUpdatePlayerName={callUpdatePlayerName} callRemovePlayer={callRemovePlayer}/>}
+	    {currentPage === "SelectImpostors" && <SelectImpostorsPage goToPageLowLevel={goToPageLowLevel}/>}
     </main>
   )
 }

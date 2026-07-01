@@ -73,7 +73,7 @@ export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPl
           <Button
             primary
             icon={<><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></>}
-            onClickFunction={() => {console.log(playerList)}}
+            onClickFunction={() => goToPageLowLevel("SelectImpostors")}
             label={"Everybody in?"}
           >
             Next
