@@ -37,25 +37,20 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 	return (
 			<PageContainer>
 
-				{/*
-				TODO:
-				[x] add disabled states for +/- buttons
-				[x] make increment function in App.tsx
-				[x] pass function into here and make buttons call it
-				[x] make <span> show the impostor count
-				[] figure out the little graphic above
-				[x] make the "surprise us" button
-				*/}
-
+				{/* this div here is the big container with the main content - buttons below */}
 				<div className={"flex flex-col items-center gap-8"}>
+
+					{/* header */}
 					<div className={"flex flex-col items-center"}>
 						<Small>Step 2:</Small>
 						<H1>Choose the amount of impostors</H1>
 					</div>
+
+					{/* faces */}
 					<div className={"flex flex-row justify-center flex-wrap gap-2"}>
 						{/* so this part's a bit weird. im making an array from just a number and then
 						making all of them false except the amount of impostors*/}
-						{Array.from({length:maxImpostorCount+1}, (_,i) => i < impostorCount).map((isImpostor,index) => (
+						{Array.from({length:maxImpostorCount+1}, (_,i) => i < impostorCount).map((isImpostor) => (
 								<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
 								     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
 										 className={isImpostor?"text-red-500":"text-green-500"}
@@ -64,7 +59,10 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 								</svg>
 						))}
 					</div>
+
+					{/* controls */}
 					<div className={"flex flex-col items-center w-3/4 gap-4"}>
+						{/* incrementing */}
 						<div className={"flex flex-row gap-1 w-full"}>
 							<button
 									disabled={impostorCount === 1 || countHidden}
@@ -84,6 +82,8 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 								<IncrementIcon icon={<><path d="M12 5l0 14" /><path d="M5 12l14 0" /></>}/>
 							</button>
 						</div>
+
+						{/* surprise */}
 						<div className={"w-full"}>
 							<Button
 								icon={<><path d="M3 9a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1l0 -2" /><path d="M12 8l0 13" /><path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" /></>}
@@ -98,7 +98,8 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 						</div>
 					</div>
 				</div>
-			
+
+			{/* bottom buttons */}
 			<ButtonGroup>
 				<Button
 					primary
