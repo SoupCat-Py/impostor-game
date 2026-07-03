@@ -12,8 +12,6 @@ type PageProps = {
   callRemovePlayer: (index: number) => void;
 }
 
-// TODO:
-// [] disable "next" button if player count is zero
 
 function RemovePlayerButton({ onRemove }: {onRemove: () => void;}) {
   return (
@@ -77,6 +75,7 @@ export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPl
             icon={<><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></>}
             onClickFunction={() => goToPageLowLevel("SelectImpostors")}
             label={"Everybody in?"}
+            isDisabled={playerList.length < 2}
           >
             Next
           </Button>
