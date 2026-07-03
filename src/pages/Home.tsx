@@ -1,5 +1,5 @@
 import type { Page } from "../App";
-import PageContainer from "../components/PageContainer"
+import { PageContainer } from "../components/PageContainer"
 import { H1 } from "../components/Text"
 import { Button, ButtonGroup } from "../components/Button"
 

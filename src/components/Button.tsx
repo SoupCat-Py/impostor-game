@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Small } from "./Text"
+import { Small } from "./Text";
 
 type buttonProps = {
   label?: string;
@@ -8,6 +8,7 @@ type buttonProps = {
   icon?: ReactNode;
   isDisabled?: boolean;
   onClickFunction?: () => void;
+  quit?: boolean;
 }
 
 export function Button({label, children, primary = false, icon, isDisabled=false, onClickFunction}: buttonProps) {
@@ -58,9 +59,26 @@ export function Button({label, children, primary = false, icon, isDisabled=false
 }
 
 export function ButtonGroup({children}:buttonProps) {
-    return (
-        <div className="flex flex-col gap-2 pb-4">
-            {children}
-        </div>
-    )
+  return (
+      <div className="flex flex-col gap-2 pb-4">
+          {children}
+      </div>
+  )
+}
+
+export function BackButton({quit, onClickFunction}:buttonProps) {
+  return (
+      <button
+          className={"flex flex-row gap-1 items-center justify-start cursor-pointer"}
+          onClick={onClickFunction}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             className="text-neutral-500 dark:text-taupe-400">
+          <path d="M9 14l-4 -4l4 -4"/>
+          <path d="M5 10h11a4 4 0 1 1 0 8h-1"/>
+        </svg>
+        <Small>{quit?"quit":"back"}</Small>
+      </button>
+  )
 }

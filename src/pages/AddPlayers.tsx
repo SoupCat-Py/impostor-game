@@ -1,8 +1,8 @@
 import type { Page, playerData } from "../App.tsx";
-import PageContainer from "../components/PageContainer.tsx";
+import { PageContainer, InnerContainer } from "../components/PageContainer.tsx";
 import { H1, Small } from "../components/Text.tsx";
 import { List, ListItem } from "../components/Lists.tsx";
-import { ButtonGroup, Button } from "../components/Button.tsx";
+import { ButtonGroup, Button, BackButton } from "../components/Button.tsx";
 
 type PageProps = {
   goToPageLowLevel: (newPage: Page) => void;  // function that takes newPage as Page type
@@ -33,42 +33,46 @@ function RemovePlayerButton({ onRemove }: {onRemove: () => void;}) {
 export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPlayer, callUpdatePlayerName, callRemovePlayer }: PageProps) {
   return (
       <PageContainer>
-      
-        <div className="flex flex-col gap-6">
-          <div className={"flex flex-col justify-center items-center"}>
-            <Small>Step 1:</Small>
-            <H1>Add Players</H1>
+
+        <InnerContainer>
+          <BackButton onClickFunction={() => goToPageLowLevel("Home")}/>
+          <div className="flex flex-col gap-6">
+            <div className={"flex flex-col justify-center items-center"}>
+              <Small>Step 1:</Small>
+              <H1>Add Players</H1>
+            </div>
+            <List>
+              {playerList.map((player,index) => (
+                <ListItem row key={index}>
+                  <RemovePlayerButton onRemove={() => callRemovePlayer(index)}/>
+                  <input
+                    type="text"
+                    value={player.name}  // the text inside is controlled by React instead of the browser
+                    onChange={e => callUpdatePlayerName(index, e.target.value)}  // call func when user types
+                    autoFocus={index === playerList.length - 1}
+                    // set value to the placeholder when user un-focuses if it's blank
+                    onBlur={() => {
+                      if (player.name === "") {
+                        callUpdatePlayerName(index, `Player ${index+1}`)
+                      }
+                    }}
+                    placeholder={`Player ${index + 1}`}
+                    className={"text-md text-rose-900 dark:text-yellow-100 text-center focus:outline-none"}
+                    />
+                </ListItem>
+              ))}
+            </List>
+            <ButtonGroup>
+              <Button
+                icon={<><path d="M12 5l0 14" /><path d="M5 12l14 0" /></>}
+                onClickFunction={callAddPlayer}
+              >
+              </Button>
+            </ButtonGroup>
           </div>
-          <List>
-            {playerList.map((player,index) => (
-            	<ListItem row key={index}>
-            	  <RemovePlayerButton onRemove={() => callRemovePlayer(index)}/>
-            	  <input
-            	  	type="text"
-            	  	value={player.name}  // the text inside is controlled by React instead of the browser
-           		    onChange={e => callUpdatePlayerName(index, e.target.value)}  // call func when user types
-           		    autoFocus={index === playerList.length - 1}
-           		    // set value to the placeholder when user un-focuses if it's blank
-           		    onBlur={() => {
-           		    	if (player.name === "") {
-           		    		callUpdatePlayerName(index, `Player ${index+1}`)
-           		    	}
-           		    }}
-             	    placeholder={`Player ${index + 1}`}
-             	    className={"text-md text-rose-900 dark:text-yellow-100 text-center focus:outline-none"}
-          	      />
-            	</ListItem>
-            ))}
-          </List>
-          <ButtonGroup>
-            <Button
-            	icon={<><path d="M12 5l0 14" /><path d="M5 12l14 0" /></>}
-            	onClickFunction={callAddPlayer}
-           	>
-           	</Button>
-          </ButtonGroup>
-        </div>
-        
+        </InnerContainer>
+
+
         <ButtonGroup>
           <Button
             primary
@@ -78,12 +82,6 @@ export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPl
             isDisabled={playerList.length < 2}
           >
             Next
-          </Button>
-          <Button
-            onClickFunction={() => goToPageLowLevel("Home")}
-            icon={<><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></>}
-          >
-            Back to Home
           </Button>
         </ButtonGroup>
         

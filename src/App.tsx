@@ -98,7 +98,7 @@ export default function App() {
   // render each page IF currentPage matches it and then pass down the
   // goToPageLowLevel wrapper into each child
   return (
-    <main className="flex flex-row justify-center">
+    <main className="flex flex-col justify-center">
       {/*also passing down functions to each page*/}
       {currentPage === "Home" && <HomePage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "HowToPlay" && <InstructionsPage goToPageLowLevel={goToPageLowLevel}/>}
