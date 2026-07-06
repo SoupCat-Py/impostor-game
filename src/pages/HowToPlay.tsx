@@ -29,6 +29,7 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
           <Card>
             <H2 noPadding>Note:</H2>
             <Para>I do not save or collect <strong>any</strong> data. Everything will reset if you reload the page.</Para>
+            <Para>If you are using an android device, do not use the system back button.</Para>
           </Card>
           <Card>
             <H1>General Info</H1>
