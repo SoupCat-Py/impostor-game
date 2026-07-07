@@ -10,7 +10,7 @@ import ResultsPage from "./pages/Results.tsx";
 
 // this is used to define the only permissible values for the current page.
 // this is what TypeScript is nice for - using anything else would throw an error.
-export type Page = "Home" | "HowToPlay" | "AddPlayers" | "SelectImpostors" | "Question" | "Results"
+export type Page = "Home" | "HowToPlay" | "AddPlayers" | "SelectImpostors" | "Question" | "Results" | "Reveal"
 
 // all the data types being stored in here
 export interface playerData {
@@ -190,7 +190,8 @@ export default function App() {
       />}
       {currentPage === "Results" && <ResultsPage
         goToPageLowLevel={goToPageLowLevel}
-        fuck={() => console.log(playerList)}
+        allPlayerData={playerList}
+        impostorCount={impostorCount}
       />}
     </main>
   )
