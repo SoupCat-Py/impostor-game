@@ -19,7 +19,7 @@ export default function RevealPage({goToPageLowLevel, allPlayerData, impostorCou
     const [impostorHidden, setImpostorHidden] = useState(false);
     
     return (
-        <PageContainer>
+        <PageContainer fixed>
             <InnerContainer>
                 <div className="relative w-full h-full flex flex-col justify-center items-center">
                     <svg
