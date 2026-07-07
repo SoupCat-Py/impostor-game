@@ -1,5 +1,5 @@
 import { PageContainer, InnerContainer } from "../components/PageContainer";
-import { Button, ButtonGroup } from "../components/Button";
+import { Button, ButtonGroup, BackButton } from "../components/Button";
 import type { Page, playerData } from "../App";
 import { H1, Para } from "../components/Text";
 import { useState } from "react";
@@ -21,6 +21,7 @@ export default function RevealPage({goToPageLowLevel, allPlayerData, impostorCou
     return (
         <PageContainer fixed>
             <InnerContainer>
+                <BackButton quit onClickFunction={() => goToPageLowLevel("Home")}></BackButton>
                 <div className="relative w-full h-full flex flex-col justify-center items-center">
                     <svg
                         viewBox="0 0 354 350" xmlns="http://www.w3.org/2000/svg"
