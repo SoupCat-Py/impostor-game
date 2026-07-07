@@ -13,12 +13,6 @@ type PageProps = {
     callChooseQuestions: () => void;
 }
 
-// TODO:
-// [?] fix layout
-// [] make the SVG spin slowly
-// [x] wire up the primary button
-// [x] add icons to buttons
-
 export default function RevealPage({goToPageLowLevel, allPlayerData, impostorCount, callChooseImpostors, callChooseQuestions, callFirstPlayer}:PageProps) {
     
     // using this to obfuscate the impostor for when user clicks "play again"
