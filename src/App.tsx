@@ -7,6 +7,7 @@ import AddPlayersPage from "./pages/AddPlayers.tsx";
 import SelectImpostorsPage from "./pages/SelectImpostors.tsx";
 import QuestionPage from "./pages/Question.tsx";
 import ResultsPage from "./pages/Results.tsx";
+import RevealPage from "./pages/Reveal.tsx";
 
 // this is used to define the only permissible values for the current page.
 // this is what TypeScript is nice for - using anything else would throw an error.
@@ -192,6 +193,14 @@ export default function App() {
         goToPageLowLevel={goToPageLowLevel}
         allPlayerData={playerList}
         impostorCount={impostorCount}
+      />}
+      {currentPage === "Reveal" && <RevealPage
+        goToPageLowLevel={goToPageLowLevel}
+        allPlayerData={playerList}
+        impostorCount={impostorCount}
+        callChooseImpostors={callChooseImpostors}
+        callChooseQuestions={callChooseQuestions}
+        callFirstPlayer={callFirstPlayer}
       />}
     </main>
   )
