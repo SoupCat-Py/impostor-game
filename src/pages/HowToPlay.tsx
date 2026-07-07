@@ -1,5 +1,5 @@
 import type { Page } from "../App"
-import {PageContainer, InnerContainer} from "../components/PageContainer"
+import { PageContainer } from "../components/PageContainer"
 import { H1, H2, Para } from "../components/Text"
 import {BackButton, Button, ButtonGroup} from "../components/Button"
 import type { ReactNode } from "react"
@@ -23,7 +23,6 @@ interface PageProps {
 export default function InstructionsPage({goToPageLowLevel}:PageProps) {
   return (
     <PageContainer>
-      <InnerContainer>
         <BackButton onClickFunction={() => goToPageLowLevel("Home")}/>
         <div className="flex flex-col gap-6">
           <Card>
@@ -47,7 +46,6 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
             <Para>Once everyone has taken their turn, all the answers are revealed and the discussion can begin. As a group, you must work together to discern who answered a different question. Once you think you're ready, tap the "reveal" button to show who the impostor was (or all of them if there were multiple).</Para>
           </Card>
         </div>
-      </InnerContainer>
       <ButtonGroup>
         <Button
           primary
