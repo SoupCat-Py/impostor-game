@@ -57,7 +57,6 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
                         <input
                             type="text"
                             placeholder="enter your answer here"
-                            autoFocus
                             required
                             ref={answerRef}
                             // if the field is empty, set isEmpty to true
