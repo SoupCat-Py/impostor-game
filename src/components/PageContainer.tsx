@@ -14,7 +14,7 @@ export function PageContainer({children}:PageContainerProps) {
 
 export function InnerContainer({children}:PageContainerProps) {
   return (
-      <div className={"flex flex-col gap-4"}>
+      <div className={"flex flex-col gap-4 h-full"}>
         {children}
       </div>
   )

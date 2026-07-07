@@ -1,12 +1,16 @@
 import { useState } from "react";
+import random from "random";
+import questions from "./questions.json"
 import HomePage from "./pages/Home";
 import InstructionsPage from "./pages/HowToPlay";
 import AddPlayersPage from "./pages/AddPlayers.tsx";
 import SelectImpostorsPage from "./pages/SelectImpostors.tsx";
+import QuestionPage from "./pages/Question.tsx";
+import ResultsPage from "./pages/Results.tsx";
 
 // this is used to define the only permissible values for the current page.
 // this is what TypeScript is nice for - using anything else would throw an error.
-export type Page = "Home" | "HowToPlay" | "AddPlayers" | "SelectImpostors"
+export type Page = "Home" | "HowToPlay" | "AddPlayers" | "SelectImpostors" | "Question" | "Results"
 
 // all the data types being stored in here
 export interface playerData {
@@ -14,15 +18,10 @@ export interface playerData {
 	isImpostor: boolean;
 	answer: string;
 }
-//export interface gameData {
-//	playerList: playerData[];  // this means an array of player objects
-//	impostorCount: number;
-//	realQuestion: string;
-//	impostorQuestion: string;
-	// I'm gonna make a huge JSON file full of questions later.
-	// Might pull them from Full Squad (give them attribution)
-	// as well as making my own 🤔
-//}
+export interface questionData {
+  real: string;
+  imp: string;
+}
 
 
 export default function App() {
@@ -95,6 +94,61 @@ export default function App() {
   }
 
 
+  // chooses impostors at random from a copy of playerList
+  function callChooseImpostors () {
+    // first make a copy of playerList and shuffle it
+    const shuffledPlayerList = [...random.shuffle(playerList)];
+    // make an array of impostors from the first `count` in tempPlayerList
+    // note that .slice takes two args (limits) - only one goes from that to the end
+    // also the second arg is EXCLUSIVE
+    const impostorArray = shuffledPlayerList.slice(0, impostorCount)
+    // get just the names of each of the impostors
+    // remember that the arrays up to here are full of objects
+    const impostorNames = impostorArray.map(player => player.name)
+    // now update the og playerList by giving isImpostor to the impostors
+    setPlayers(playerList.map(player => ({
+    ...player, // leave original data
+    isImpostor: impostorNames.includes(player.name) // set isImpostor to whether the name is in impostorNames
+    })));
+  }
+
+  // state for questions
+  const [QuestionPair, setQuestionPair] = useState({real:"",imp:""});
+
+  // choose a random pair of questions
+  function callChooseQuestions() {
+    const randomQuestionPair = random.choice(questions);
+    console.log(randomQuestionPair)
+    console.log(randomQuestionPair?.real)
+    // have to use `if` since TS doesn't know if it will return anything or not
+    if (randomQuestionPair) {
+      setQuestionPair({real:randomQuestionPair?.real, imp:randomQuestionPair?.imp})
+    }
+    else {
+      alert("Questions not found. Idk how to help you...")
+    }
+  }
+
+
+  // using this to have one page that goes to each player instead of one page for everyone
+  const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
+
+  // this part does the actual navigating
+  const goToNextPlayer = () => {
+    if (currentPlayerIndex === playerList.length - 1) {
+      goToPageTopLevel("Results")
+    }
+    else {
+      setCurrentPlayerIndex(currentPlayerIndex + 1);
+    }
+  }
+
+  // this will get called at the start of the game for when you quit and go back
+  const callFirstPlayer = () => {
+    setCurrentPlayerIndex(0);
+  }
+
+
   // render each page IF currentPage matches it and then pass down the
   // goToPageLowLevel wrapper into each child
   return (
@@ -115,6 +169,23 @@ export default function App() {
           impostorCount={impostorCount}
           maxImpostorCount={playerList.length - 1}
           callSetRandomImpostorCount={callSetRandomImpostorCount}
+          callChooseImpostors={callChooseImpostors}
+          callFirstPlayer={callFirstPlayer}
+          callChooseQuestions={callChooseQuestions}
+      />}
+      {currentPage === "Question" && <QuestionPage
+        goToPageLowLevel={goToPageLowLevel}
+        goToNextPlayer={goToNextPlayer}
+        // you gotta put .name here cause playerList[0] will return an OBJECT
+        // actually DONT HARDCODE THIS because it's a state and will change
+        currentPlayerName={playerList[currentPlayerIndex].name}
+        isImpostor={playerList[currentPlayerIndex].isImpostor}
+        playerList={playerList}
+        currentPlayerIndex={currentPlayerIndex}
+        questions={QuestionPair}
+      />}
+      {currentPage === "Results" && <ResultsPage
+        goToPageLowLevel={goToPageLowLevel}
       />}
     </main>
   )
