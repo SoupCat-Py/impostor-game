@@ -1,12 +1,214 @@
 [
   {
     "id": 1,
-    "real": "How many kindergarteners could you take in a fight?",
-    "imp": "how many hot dogs can you eat in one sitting?"
+    "real": "What is the most someone should spend on a first date?",
+    "imp": "What's the average price of a game console?"
   },
   {
     "id": 2,
-    "real": "What's the furthest you've ever walked?",
-    "imp": "guh?"
+    "real": "What song are you playing at your funeral?",
+    "imp": "What is an insanely underrated song?"
+  },
+  {
+    "id": 3,
+    "real": "What is the longest you can go without gooning?",
+    "imp": "How many times have you gooned this week?"
+  },
+  {
+    "id": 4,
+    "real": "Where is the worst place to have your birthday party?",
+    "imp": "What is the worst retail store?"
+  },
+  {
+    "id": 5,
+    "real": "You have to perform one song perfectly to save your life.",
+    "imp": "What is the worst karaoke song?"
+  },
+  {
+    "id": 6,
+    "real": "How old is too old to get freaky?",
+    "imp": "What's the ideal length for a movie?",
+    "tip": "only enter the number in minutes"
+  },
+  {
+    "id": 7,
+    "real": "What olympic sport do you think you would do the best at?",
+    "imp": "What is the most exciting winter olympic sport?"
+  },
+  {
+    "id": 8,
+    "real": "What emoji would you use to describe tour dating life?",
+    "imp": "What is your favourite animal emoji?"
+  },
+  {
+    "id": 9,
+    "real": "What show has gone on for way too long?",
+    "imp": "What current show will you never watch no matte what?"
+  },
+  {
+    "id": 10,
+    "real": "If you should show people from the past one thing from the present, what would it be?",
+    "imp": "Name a popular trend of 2025"
+  },
+  {
+    "id": 11,
+    "real": "What isn't a cult but feels like it is?",
+    "imp": "What show has the weirdest fans?"
+  },
+  {
+    "id": 12,
+    "real": "WWhat is the worst fictional world to live in?",
+    "imp": "What's the worst movie a friend has put on?"
+  },
+  {
+    "id": 13,
+    "real": "What's the riskiest text you've ever sent?",
+    "imp": "What is a pickup line you would force on your worst enemy to use?"
+  },
+  {
+    "id": 14,
+    "real": "If you could be any inanimate object, what would you be?",
+    "imp": "What's the most disturbing thing in your bathroom?"
+  },
+  {
+    "id": 15,
+    "real": "If you could drop a diss track for ANYONE, who would it be?",
+    "imp": "What historical figure has had the most positive impact on humanity?"
+  },
+  {
+    "id": 16,
+    "real": "What is the worst place to bring your partner on valentine's day?",
+    "imp": "What is the most dangerous city in the world right now?"
+  },
+  {
+    "id": 17,
+    "real": "If you were abducted by aliens, why would they choose you?",
+    "imp": "What do you do when your roommates are gone?"
+  },
+  {
+    "id": 18,
+    "real": "If you could delete one thing from the internet forever, what would it be?",
+    "imp": "What's the best kind of meme you've seen recently?",
+    "tip": "pick something vague/a style"
+  },
+  {
+    "id": 19,
+    "real": "What celebrity would you have the best chance with at the bar?",
+    "imp": "Who's the most underrated attractive person?"
+  },
+  {
+    "id": 20,
+    "real": "What is the worst name you could give a child?",
+    "imp": "What is a stripper name you would name after yourself?"
+  },
+  {
+    "id": 21,
+    "real": "What trend should we bring back this year?",
+    "imp": "What is the worst punishment in history?"
+  },
+  {
+    "id": 22,
+    "real": "What cartoon character would make the best NBA player?",
+    "imp": "What cartoon character did you look up to most as a kid?"
+  },
+  {
+    "id": 23,
+    "real": "What's the most embarrasing thing you've used AI for?",
+    "imp": "What is your least favourite errand to run?"
+  },
+  {
+    "id": 24,
+    "real": "If you could make it snow anywhere and you could go on vacation there, where would it be?",
+    "imp": "What city would you never want to have snow?"
+  },
+  {
+    "id": 25,
+    "real": "What is your favourite thing to do in the snow?",
+    "imp": "What is the worst thing to do in the snow?"
+  },
+  {
+    "id": 26,
+    "real": "What animal has the best chance of taking over the world?",
+    "imp": "What animal would you like to see become a pet?"
+  },
+  {
+    "id": 27,
+    "real": "What's something you hated doing as a kid but enjoy now?",
+    "imp": "What was the worst part about getting a checkup at the doctor as a kid?"
+  },
+  {
+    "id": 28,
+    "real": "What is the weirdest group chat name that you've been in?",
+    "imp": "What is the worst name you could give a dog?"
+  },
+  {
+    "id": 29,
+    "real": "Who is the hottest person in this group?",
+    "imp": "Who here would be the toughest to beat in a fist fight?"
+  },
+  {
+    "id": 30,
+    "real": "What is the best city to live in as a young adult?",
+    "imp": "What's a city you've never been to but want to visit?"
+  },
+  {
+    "id": 31,
+    "real": "What is the worst thing to say at a job interview?",
+    "imp": "What is the worst thing you can say on a first date?"
+  },
+  {
+    "id": 32,
+    "real": "If you were the president/prime minister, what food would you outlaw first?",
+    "imp": "What is your favourite thing to eat at work/school?"
+  },
+  {
+    "id": 33,
+    "real": "If you were offered a million dollars to finish everything in the menu, where would you go?",
+    "imp": "What food is your guilty pleasure?"
+  },
+  {
+    "id": 34,
+    "real": "What addiction has been totally normalized by society?",
+    "imp": "What's an illegal substance you'd like to try?"
+  },
+  {
+    "id": 35,
+    "real": "What new year's resolution do people never stick to?",
+    "imp": "What is your next new years resolution?"
+  },
+  {
+    "id": 36,
+    "real": "Which youtuber was the best during their prine",
+    "imp": "Which youtuber did you watch the most as a kid?"
+  },
+  {
+    "id": 37,
+    "real": "What's the most unhygenic habit you've ever seen someone have?",
+    "imp": "What's the grossest thing a dog does?"
+  },
+  {
+    "id": 38,
+    "real": "What is the worst gift to get for Christmas?",
+    "imp": "What instantly ruins any meal?"
+  },
+  {
+    "id": 39,
+    "real": "What's the worst thing to say to your partner in bed?",
+    "imp": "What is the worst thing to say on public transportation?"
+  },
+  {
+    "id": 40,
+    "real": "Name one thing you're thankful for",
+    "imp": "What's your favourite condiment?"
+  },
+  {
+    "id": 41,
+    "real": "If animals could talk, which would be the rudest?",
+    "imp": "What is the most annoying animal you know?"
+  },
+  {
+    "id": 42,
+    "real": "Name a piece of fictional technology you wish you could have?",
+    "imp": "What is the most overpowered weapon in anime?"
   }
 ]
