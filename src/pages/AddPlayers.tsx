@@ -80,7 +80,7 @@ export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPl
             icon={<><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></>}
             onClickFunction={() => goToPageLowLevel("SelectImpostors")}
             label={"Everybody in?"}
-            isDisabled={playerList.length < 2}
+            isDisabled={playerList.length < 3}
           >
             Next
           </Button>
