@@ -22,6 +22,7 @@ export interface playerData {
 export interface questionData {
   real: string;
   imp: string;
+  tip?: string;
 }
 
 
@@ -193,6 +194,7 @@ export default function App() {
         goToPageLowLevel={goToPageLowLevel}
         allPlayerData={playerList}
         impostorCount={impostorCount}
+        realQuestion={QuestionPair.real}
       />}
       {currentPage === "Reveal" && <RevealPage
         goToPageLowLevel={goToPageLowLevel}

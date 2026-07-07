@@ -8,15 +8,16 @@ type PageProps = {
     goToPageLowLevel: (string:Page) => void;
     allPlayerData: playerData[];
     impostorCount: number;
+    realQuestion: string;
 }
 
-export default function ResultsPage({goToPageLowLevel, allPlayerData, impostorCount}:PageProps) {
+export default function ResultsPage({goToPageLowLevel, allPlayerData, impostorCount, realQuestion}:PageProps) {
     return (
         <PageContainer>
             <InnerContainer>
                 <div className="flex flex-col items-center">
                     <Small>The question was:</Small>
-                    <H2 noPadding>How many kindergarteners could you take in a fight?</H2>
+                    <H2 noPadding>{realQuestion}</H2>
                 </div>
                 <List>
                     {allPlayerData.map((player,index) => (
