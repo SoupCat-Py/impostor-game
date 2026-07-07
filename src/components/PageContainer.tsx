@@ -2,11 +2,12 @@ import type { ReactNode } from "react";
 
 type PageContainerProps = {
   children: ReactNode;
+  fixed?: boolean;
 }
 
-export function PageContainer({children}:PageContainerProps) {
+export function PageContainer({children, fixed=false}:PageContainerProps) {
   return (
-    <main className="flex flex-col p-6 gap-6 h-dvh w-full max-w-150 place-content-between">
+    <main className={`flex flex-col p-6 gap-6 ${fixed?"h-dvh":"min-h-dvh"} w-full max-w-150 place-content-between`}>
         {children}
     </main>
   )

@@ -63,13 +63,11 @@ export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPl
                 </ListItem>
               ))}
             </List>
-            <ButtonGroup>
-              <Button
-                icon={<><path d="M12 5l0 14" /><path d="M5 12l14 0" /></>}
-                onClickFunction={callAddPlayer}
-              >
-              </Button>
-            </ButtonGroup>
+            <Button
+              icon={<><path d="M12 5l0 14" /><path d="M5 12l14 0" /></>}
+              onClickFunction={callAddPlayer}
+            >
+            </Button>
           </div>
         </InnerContainer>
 

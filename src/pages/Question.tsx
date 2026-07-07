@@ -33,12 +33,12 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
     const [isEmpty, setEmpty] = useState(true);
     
     return (
-        <PageContainer>
+        // give the uppermost container the `fixed` property so that the question card
+        // has a fixed space to fill up.
+        <PageContainer fixed>
             <InnerContainer>
                 <BackButton quit onClickFunction={() => goToPageLowLevel("Home")}/>
-                <div
-                    className="flex flex-col p-4 my-6 h-full max-h-120 items-center justify-center rounded-2xl border-2 border-rose-500 dark:border-yellow-500 bg-neutral-50 dark:bg-taupe-800"
-                    >
+                <div className="flex flex-col p-4 my-6 h-full max-h-120 items-center justify-center rounded-2xl border-2 border-rose-500 dark:border-yellow-500 bg-neutral-50 dark:bg-taupe-800">
                     {cardHidden
                     ?<div
                         className="flex flex-col justify-center items-center h-full w-full"
