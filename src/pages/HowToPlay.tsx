@@ -45,6 +45,13 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
             <H2>Accusal Phase</H2>
             <Para>Once everyone has taken their turn, all the answers are revealed and the discussion can begin. As a group, you must work together to discern who answered a different question. Once you think you're ready, tap the "reveal" button to show who the impostor was (or all of them if there were multiple).</Para>
           </Card>
+          <Card>
+            <Para>
+              The concept of this game, as well as like all the questions, are from the&nbsp;
+              <a target="_blank" href="https://www.youtube.com/@FullSquad" className="text-rose-700 dark:text-yellow-200 underline text-nowrap">Full Squad</a>
+              &nbsp;YouTube channel.
+            </Para>
+          </Card>
         </div>
       <ButtonGroup>
         <Button
