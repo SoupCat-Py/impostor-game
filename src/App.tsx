@@ -118,8 +118,6 @@ export default function App() {
   // choose a random pair of questions
   function callChooseQuestions() {
     const randomQuestionPair = random.choice(questions);
-    console.log(randomQuestionPair)
-    console.log(randomQuestionPair?.real)
     // have to use `if` since TS doesn't know if it will return anything or not
     if (randomQuestionPair) {
       setQuestionPair({real:randomQuestionPair?.real, imp:randomQuestionPair?.imp})
@@ -134,9 +132,15 @@ export default function App() {
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
 
   // this part does the actual navigating
-  const goToNextPlayer = () => {
+  const nextAndSave = (answer:string) => {
+    // first make a temporary array that saves instantly so that React state can't slow this shit down.
+    // apparently it's async so it can't save by the time i go to the next page
+    const tempSavedList = playerList.map((player, idx) => idx === currentPlayerIndex ? {...player, answer} : player);
+    // now that we have a solidly saved array, pass that into the player objects
+    setPlayers(tempSavedList);
+
     if (currentPlayerIndex === playerList.length - 1) {
-      goToPageTopLevel("Results")
+      goToPageTopLevel("Results");
     }
     else {
       setCurrentPlayerIndex(currentPlayerIndex + 1);
@@ -175,7 +179,7 @@ export default function App() {
       />}
       {currentPage === "Question" && <QuestionPage
         goToPageLowLevel={goToPageLowLevel}
-        goToNextPlayer={goToNextPlayer}
+        nextAndSave={nextAndSave}
         // you gotta put .name here cause playerList[0] will return an OBJECT
         // actually DONT HARDCODE THIS because it's a state and will change
         currentPlayerName={playerList[currentPlayerIndex].name}
@@ -186,6 +190,7 @@ export default function App() {
       />}
       {currentPage === "Results" && <ResultsPage
         goToPageLowLevel={goToPageLowLevel}
+        fuck={() => console.log(playerList)}
       />}
     </main>
   )

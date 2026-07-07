@@ -2,7 +2,7 @@ import { PageContainer, InnerContainer } from "../components/PageContainer";
 import { Button, ButtonGroup, BackButton } from "../components/Button";
 import { H1, H2, Para, Small } from "../components/Text";
 import type { Page, playerData, questionData } from "../App";
-import { useState, } from "react";
+import { useState, useRef } from "react";
 
 type PageProps = {
     currentPlayerName: string;
@@ -10,11 +10,11 @@ type PageProps = {
     isImpostor: boolean;
     playerList: playerData[];
     questions: questionData;
-    goToNextPlayer: () => void;
+    nextAndSave: (answer:string) => void;
     goToPageLowLevel: (string:Page) => void;
 }
 
-export default function QuestionPage({currentPlayerName, currentPlayerIndex, isImpostor, goToNextPlayer, goToPageLowLevel, playerList, questions}:PageProps) {
+export default function QuestionPage({currentPlayerName, currentPlayerIndex, isImpostor, nextAndSave, goToPageLowLevel, playerList, questions}:PageProps) {
     
     const [cardHidden, setCardHidden] = useState(true)
 
@@ -25,6 +25,9 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
     const hideCard = () => {
         setCardHidden(true);
     }
+
+    // this is so that the saving function can reference the input
+    const answerRef = useRef<HTMLInputElement>(null);
     
     return (
         <PageContainer>
@@ -48,7 +51,11 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
                             <H2>{`${isImpostor?questions.imp:questions.real}`}</H2>
                         </div>
                         <input
-                            type="text" placeholder="enter your answer here" autoFocus required
+                            type="text"
+                            placeholder="enter your answer here"
+                            autoFocus
+                            required
+                            ref={answerRef}
                             className="h-1/3 text-lg text-center align-center border rounded-xl border-rose-300 dark:border-yellow-600 text-rose-900 dark:text-yellow-100"
                         >
                         </input>
@@ -61,8 +68,9 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
                     label="Done answering?"
                     icon={(currentPlayerIndex === playerList.length - 1) ? null : <><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></>}
                     onClickFunction={() => {
-                        goToNextPlayer();
                         hideCard();
+                        nextAndSave(answerRef.current?.value ?? "[no answer]");
+                        console.log(playerList);
                     }}
                 >
                     {(currentPlayerIndex === playerList.length - 1) ? "Let the chaos begin!" : "Next Player"}

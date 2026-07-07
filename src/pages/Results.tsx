@@ -5,9 +5,10 @@ import type { Page } from "../App";
 
 type PageProps = {
     goToPageLowLevel: (string:Page) => void;
+    fuck: () => void;
 }
 
-export default function ResultsPage({goToPageLowLevel}:PageProps) {
+export default function ResultsPage({goToPageLowLevel, fuck}:PageProps) {
     return (
         <PageContainer>
             <InnerContainer>
@@ -16,7 +17,7 @@ export default function ResultsPage({goToPageLowLevel}:PageProps) {
             <ButtonGroup>
                 <Button 
                     primary
-                    onClickFunction={() => goToPageLowLevel("Home")}
+                    onClickFunction={fuck}
                 >
                     Same Players (go home)
                 </Button>
