@@ -73,7 +73,7 @@ export function BackButton({quit, onClickFunction}:buttonProps) {
           onClick={onClickFunction}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
              className="text-neutral-500 dark:text-taupe-400">
           <path d="M9 14l-4 -4l4 -4"/>
           <path d="M5 10h11a4 4 0 1 1 0 8h-1"/>
