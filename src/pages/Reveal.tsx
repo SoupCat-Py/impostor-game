@@ -11,9 +11,10 @@ type PageProps = {
     callChooseImpostors: () => void;
     callFirstPlayer: () => void;
     callChooseQuestions: () => void;
+    impostorQuestion: string;
 }
 
-export default function RevealPage({goToPageLowLevel, allPlayerData, impostorCount, callChooseImpostors, callChooseQuestions, callFirstPlayer}:PageProps) {
+export default function RevealPage({goToPageLowLevel, allPlayerData, impostorCount, callChooseImpostors, callChooseQuestions, callFirstPlayer, impostorQuestion}:PageProps) {
     
     // using this to obfuscate the impostor for when user clicks "play again"
     const [impostorHidden, setImpostorHidden] = useState(false);
@@ -35,6 +36,9 @@ export default function RevealPage({goToPageLowLevel, allPlayerData, impostorCou
                                 <Para>{impostorCount > 1 ? "The impostors were" : "The impostor was"}</Para>
                                 {/* the same conditional rendering as in App.tsx :D */}
                                 {allPlayerData.map((player) => (player.isImpostor && <H1>{player.name}</H1>))}
+                                <div className="w-3/4 text-center">
+                                    <Para>{`"${impostorQuestion}"`}</Para>
+                                </div>
                             </>
                         }
                     </div>

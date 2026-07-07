@@ -204,6 +204,7 @@ export default function App() {
         callChooseImpostors={callChooseImpostors}
         callChooseQuestions={callChooseQuestions}
         callFirstPlayer={callFirstPlayer}
+        impostorQuestion={QuestionPair.imp}
       />}
     </main>
   )
