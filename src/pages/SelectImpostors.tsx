@@ -16,6 +16,7 @@ type PageProps = {
   callChooseImpostors: () => void;
   callFirstPlayer: () => void;
   callChooseQuestions: () => void;
+  faceSize: number;
 }
 
 // this is for the icons on the increment buttons.
@@ -30,7 +31,7 @@ function IncrementIcon({icon}:{icon:ReactNode}) {
 	)
 }
 
-export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpostorCount, impostorCount, maxImpostorCount, callSetRandomImpostorCount, callChooseImpostors, callFirstPlayer, callChooseQuestions}: PageProps) {
+export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpostorCount, impostorCount, maxImpostorCount, callSetRandomImpostorCount, callChooseImpostors, callFirstPlayer, callChooseQuestions, faceSize}: PageProps) {
 
 	// this is to hide the real impostor count when the user clicks "surprise us"
 	const [countHidden, setCountHidden] = useState<boolean>(false);
@@ -57,7 +58,7 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 							{/* so this part's a bit weird. im making an array from just a number and then
 							making all of them false except the amount of impostors*/}
 							{Array.from({length:maxImpostorCount+1}, (_,i) => i < impostorCount).map((isImpostor) => (
-									<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+									<svg xmlns="http://www.w3.org/2000/svg" width={faceSize} height={faceSize} viewBox="0 0 24 24" fill="none"
 											 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
 											 className={countHidden?"text-rose-900 dark:text-yellow-100":isImpostor?"text-red-500":"text-green-500"}
 									>

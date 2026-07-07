@@ -178,6 +178,7 @@ export default function App() {
           callChooseImpostors={callChooseImpostors}
           callFirstPlayer={callFirstPlayer}
           callChooseQuestions={callChooseQuestions}
+          faceSize={Math.max(30, 100 - playerList.length * 4)}
       />}
       {currentPage === "Question" && <QuestionPage
         goToPageLowLevel={goToPageLowLevel}
