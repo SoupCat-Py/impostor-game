@@ -28,6 +28,9 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
 
     // this is so that the saving function can reference the input
     const answerRef = useRef<HTMLInputElement>(null);
+
+    // this is to track whether there's an input and if the button should be disabled
+    const [isEmpty, setEmpty] = useState(true);
     
     return (
         <PageContainer>
@@ -56,6 +59,8 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
                             autoFocus
                             required
                             ref={answerRef}
+                            // if the field is empty, set isEmpty to true
+                            onChange={e => setEmpty(e.target.value === "")}
                             className="h-1/3 text-lg text-center align-center border rounded-xl border-rose-300 dark:border-yellow-600 text-rose-900 dark:text-yellow-100"
                         >
                         </input>
@@ -66,14 +71,16 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
                 <Button
                     primary
                     label="Done answering?"
-                    icon={(currentPlayerIndex === playerList.length - 1) ? null : <><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></>}
+                    isDisabled={isEmpty}
+                    icon={isEmpty? <><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></> : (currentPlayerIndex === playerList.length - 1) ? null : <><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></>}
                     onClickFunction={() => {
                         hideCard();
                         nextAndSave(answerRef.current?.value ?? "[no answer]");
+                        setEmpty(true);
                         console.log(playerList);
                     }}
                 >
-                    {(currentPlayerIndex === playerList.length - 1) ? "Let the chaos begin!" : "Next Player"}
+                    {isEmpty? "Write something first" : (currentPlayerIndex === playerList.length - 1) ? "Let the chaos begin!" : "Next Player"}
                 </Button>
             </ButtonGroup>
         </PageContainer>
