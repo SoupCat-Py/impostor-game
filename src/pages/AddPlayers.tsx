@@ -47,6 +47,7 @@ export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPl
                   <RemovePlayerButton onRemove={() => callRemovePlayer(index)}/>
                   <input
                     type="text"
+                    autoCapitalize={"words"}
                     value={player.name}  // the text inside is controlled by React instead of the browser
                     onChange={e => callUpdatePlayerName(index, e.target.value)}  // call func when user types
                     autoFocus={index === playerList.length - 1}
