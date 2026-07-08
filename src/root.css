@@ -24,8 +24,10 @@
     }
 }
 
-.slow-spin {
-    animation: 60s infinite slowSpin;
+@media (prefers-reduced-motion: no-preference) {
+    .slow-spin {
+        animation: 60s infinite slowSpin;
+    }
 }
 @keyframes slowSpin {
     from {
