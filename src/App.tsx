@@ -100,13 +100,16 @@ export default function App() {
   function callChooseImpostors () {
     // first make a copy of playerList and shuffle it
     const shuffledPlayerList = [...random.shuffle(playerList)];
+
     // make an array of impostors from the first `count` in tempPlayerList
     // note that .slice takes two args (limits) - only one goes from that to the end
     // also the second arg is EXCLUSIVE
     const impostorArray = shuffledPlayerList.slice(0, impostorCount)
+
     // get just the names of each of the impostors
     // remember that the arrays up to here are full of objects
     const impostorNames = impostorArray.map(player => player.name)
+
     // now update the og playerList by giving isImpostor to the impostors
     setPlayers(playerList.map(player => ({
     ...player, // leave original data
