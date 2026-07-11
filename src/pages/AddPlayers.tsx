@@ -48,9 +48,11 @@ export default function AddPlayersPage({ goToPageLowLevel, playerList, callAddPl
                   <input
                     type="text"
                     autoCapitalize={"words"}
+                    enterKeyHint={"done"} // checkmark instead of enter
                     value={player.name}  // the text inside is controlled by React instead of the browser
                     onChange={e => callUpdatePlayerName(index, e.target.value)}  // call func when user types
                     autoFocus={index === playerList.length - 1}
+                    onKeyDown={e => e.key === "Enter" && e.currentTarget.blur()}  // un-focus when user presses enter
                     // set value to the placeholder when user un-focuses if it's blank
                     onBlur={() => {
                       if (player.name === "") {
