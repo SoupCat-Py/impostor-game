@@ -29,7 +29,7 @@ export function Button({label, children, primary = false, icon, isDisabled=false
           transition duration-75
           ${primary
             ? "bg-rose-500 disabled:bg-neutral-400 dark:bg-yellow-500 dark:disabled:bg-neutral-500"
-            : "bg-rose-50 disabled:bg-neutral-300 dark:bg-taupe-800 disabled:dark:bg-neutral-700"
+            : "bg-neutral-50 disabled:bg-neutral-300 dark:bg-taupe-800 disabled:dark:bg-neutral-700"
           }
           ${primary
             ? "text-white dark:text-black"
