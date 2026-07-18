@@ -4,29 +4,40 @@ import { H1, H2, Para } from "../components/Text"
 import {BackButton, Button, ButtonGroup} from "../components/Button"
 import type { ReactNode } from "react"
 
-type CardProps = {
-  children: ReactNode;
+type PageProps = {
+  goToPageLowLevel: (newPage: Page) => void;
 }
 
-function Card({children}:CardProps) {
+
+function Card({children}: {children: ReactNode}) {
   return (
-    <div className="flex flex-col p-6 g-2 bg-neutral-50 dark:bg-taupe-800 rounded-2xl">
+    <div className="flex flex-col p-6 gap-1 bg-neutral-50 dark:bg-taupe-800 rounded-2xl">
       {children}
     </div>
   )
 }
 
-interface PageProps {
-  goToPageLowLevel: (newPage: Page) => void;
+function Link({url, children}: {url: string, children: ReactNode}) {
+  return (
+      <a
+          target="_blank"
+          href={url}
+          className="text-rose-700 dark:text-yellow-200 underline text-nowrap"
+      >
+        {children}
+      </a>
+  )
 }
 
+
 export default function InstructionsPage({goToPageLowLevel}:PageProps) {
+
   return (
     <PageContainer>
         <BackButton onClickFunction={() => goToPageLowLevel("Home")}/>
         <div className="flex flex-col gap-6">
           <Card>
-            <H2 noPadding>Note:</H2>
+            <H1>Note:</H1>
             <Para>I do not save or collect <strong>any</strong> data. Everything will reset if you reload the page.</Para>
             <Para>If you are using an android device, do not use the system back button.</Para>
           </Card>
@@ -46,10 +57,15 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
             <Para>Once everyone has taken their turn, all the answers are revealed and the discussion can begin. As a group, you must work together to discern who answered a different question. Once you think you're ready, tap the "reveal" button to show who the impostor was (or all of them if there were multiple).</Para>
           </Card>
           <Card>
+            <H2 noPadding>Other Stuff:</H2>
             <Para>
               The concept of this game, as well as like all the questions, are from the&nbsp;
-              <a target="_blank" href="https://www.youtube.com/@FullSquad" className="text-rose-700 dark:text-yellow-200 underline text-nowrap">Full Squad</a>
+              <Link url={"https://www.youtube.com/@FullSquad"}>Full Squad</Link>
               &nbsp;YouTube channel.
+            </Para>
+            <Para>
+              This site was made by&nbsp;
+              <Link url={"https://github.com/SoupCat-Py"}>Soup</Link>. Please feel free to report bugs or suggest edits/improvements via GitHub issues :)
             </Para>
           </Card>
         </div>
