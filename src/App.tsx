@@ -92,7 +92,7 @@ export default function App() {
   // returns a random number between zero and TOTAL player count
   // everybody could be the impostor... >:)
   const callSetRandomImpostorCount = () => {
-    setImpostorCount(Math.floor(Math.random() * playerList.length))
+    setImpostorCount(random.int(0,playerList.length));
   }
 
 
