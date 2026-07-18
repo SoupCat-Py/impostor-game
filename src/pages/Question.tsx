@@ -77,7 +77,6 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
                         hideCard();
                         nextAndSave(answerRef.current?.value ?? "[no answer]");
                         setEmpty(true);
-                        console.log(playerList);
                     }}
                 >
                     {isEmpty? "Write something first" : (currentPlayerIndex === playerList.length - 1) ? "Let the chaos begin!" : "Next Player"}
