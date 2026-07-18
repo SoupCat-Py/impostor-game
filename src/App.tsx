@@ -166,22 +166,22 @@ export default function App() {
       {currentPage === "Home" && <HomePage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "HowToPlay" && <InstructionsPage goToPageLowLevel={goToPageLowLevel}/>}
       {currentPage === "AddPlayers" && <AddPlayersPage
-          goToPageLowLevel={goToPageLowLevel}
-          playerList={playerList}
-          callAddPlayer={callAddPlayer}
-          callUpdatePlayerName={callUpdatePlayerName}
-          callRemovePlayer={callRemovePlayer}
+        goToPageLowLevel={goToPageLowLevel}
+        playerList={playerList}
+        callAddPlayer={callAddPlayer}
+        callUpdatePlayerName={callUpdatePlayerName}
+        callRemovePlayer={callRemovePlayer}
       />}
 	    {currentPage === "SelectImpostors" && <SelectImpostorsPage
-          goToPageLowLevel={goToPageLowLevel}
-          callIncrementImpostorCount={callIncrementImpostorCount}
-          impostorCount={impostorCount}
-          maxImpostorCount={playerList.length - 1}
-          callSetRandomImpostorCount={callSetRandomImpostorCount}
-          callChooseImpostors={callChooseImpostors}
-          callFirstPlayer={callFirstPlayer}
-          callChooseQuestions={callChooseQuestions}
-          faceSize={Math.max(30, 100 - playerList.length * 4)}
+        goToPageLowLevel={goToPageLowLevel}
+        callIncrementImpostorCount={callIncrementImpostorCount}
+        impostorCount={impostorCount}
+        maxImpostorCount={playerList.length - 1}
+        callSetRandomImpostorCount={callSetRandomImpostorCount}
+        callChooseImpostors={callChooseImpostors}
+        callFirstPlayer={callFirstPlayer}
+        callChooseQuestions={callChooseQuestions}
+        faceSize={Math.max(30, 100 - playerList.length * 4)}
       />}
       {currentPage === "Question" && <QuestionPage
         goToPageLowLevel={goToPageLowLevel}
