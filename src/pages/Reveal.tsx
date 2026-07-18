@@ -43,7 +43,7 @@ export default function RevealPage({ goToPageLowLevel, allPlayerData, impostorCo
   return (
       <PageContainer fixed>
         <InnerContainer>
-          <BackButton quit onClickFunction={() => goToPageLowLevel("Home")}></BackButton>
+          <BackButton onClickFunction={() => goToPageLowLevel("Home")}></BackButton>
           <div className="relative w-full h-full flex flex-col justify-center items-center">
             <svg
                 viewBox="0 0 354 350" xmlns="http://www.w3.org/2000/svg"
