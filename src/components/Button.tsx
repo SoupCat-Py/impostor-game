@@ -89,13 +89,13 @@ export function BackButton({quit, onClickFunction}:buttonProps) {
     <section className={`${confirmShown ? "flex" : "hidden"} fixed inset-0 items-center justify-center bg-neutral-400/70 dark:bg-taupe-900/80`}>
       <div className={"flex flex-col w-max mx-2 rounded-2xl border-2 bg-rose-100 border-rose-900 dark:bg-taupe-900 dark:border-taupe-700 p-6 pb-4 gap-4"}>
         <H1>Are you sure?</H1>
-        <Para>Quitting now will end the game, but player names will be kept.</Para>
+        <Para>Quitting now will end the round, but player names will be kept.</Para>
         <ButtonGroup horizontal={true}>
           <div className={"flex-1/2"}>
             <Button
                 onClickFunction={() => setConfirmShown(false)}
             >
-              nevermind
+              Nevermind
             </Button>
           </div>
           <div className={"flex-1/2"}>
@@ -104,7 +104,7 @@ export function BackButton({quit, onClickFunction}:buttonProps) {
                 onClickFunction={onClickFunction}  // don't have to reset the state since it goes to a whole other page
                 icon={<><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></>}
             >
-              yes, quit
+              Yes, quit
             </Button>
           </div>
         </ButtonGroup>
