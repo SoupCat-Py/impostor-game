@@ -6,9 +6,9 @@ type TextProps = {
 }
 
 
-export function H1({children}:TextProps) {
+export function H1({children, noPadding=false}:TextProps) {
   return (
-    <h1 className="font-[Bagel_Fat_One]! text-4xl pb-4 w-full text-center font-bold tracking-wide text-rose-700 dark:text-yellow-500">
+    <h1 className={`font-[Bagel_Fat_One]! text-4xl ${noPadding ? null : "pb-4"} w-full text-center font-bold tracking-wide text-rose-700 dark:text-yellow-500`}>
       {children}
     </h1>
   )
