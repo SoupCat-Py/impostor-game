@@ -16,7 +16,7 @@ type PageProps = {
 
 export default function QuestionPage({currentPlayerName, currentPlayerIndex, isImpostor, nextAndSave, goToPageLowLevel, playerList, questions}:PageProps) {
     
-    const [cardHidden, setCardHidden] = useState(true)
+    const [cardHidden, setCardHidden] = useState<boolean>(true)
 
     // use this because i can't "call setState during render"
     const toggleCardHidden = () => {
@@ -30,7 +30,7 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
     const answerRef = useRef<HTMLInputElement>(null);
 
     // this is to track whether there's an input and if the button should be disabled
-    const [isEmpty, setEmpty] = useState(true);
+    const [isEmpty, setEmpty] = useState<boolean>(true);
     
     return (
         // give the uppermost container the `fixed` property so that the question card

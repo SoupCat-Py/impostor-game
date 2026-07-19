@@ -70,7 +70,7 @@ export function ButtonGroup({children, horizontal=false}:buttonProps) {
 export function BackButton({quit, onClickFunction}:buttonProps) {
 
   // setting up a react state instead of using the native popovers :(
-  const [confirmShown, setConfirmShown] = useState(false)
+  const [confirmShown, setConfirmShown] = useState<boolean>(false)
 
   return (<>
     <button

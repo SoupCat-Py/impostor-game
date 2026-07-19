@@ -17,7 +17,7 @@ type PageProps = {
 export default function RevealPage({ goToPageLowLevel, allPlayerData, impostorCount, callChooseImpostors, callChooseQuestions, callFirstPlayer, impostorQuestion }: PageProps) {
 
   // using this to obfuscate the impostor for when user clicks "play again"
-  const [impostorHidden, setImpostorHidden] = useState(false);
+  const [impostorHidden, setImpostorHidden] = useState<boolean>(false);
 
   // putting all the logic here so that I can use a switch and it de-clutters the rest of the page's TSX
   const revealContent = () => {

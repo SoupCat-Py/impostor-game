@@ -77,7 +77,7 @@ export default function App() {
 
 
   // time to decide how many impostors there will be - starting at 1 as default
-  const [impostorCount, setImpostorCount] = useState(1);
+  const [impostorCount, setImpostorCount] = useState<number>(1);
 
   const callIncrementImpostorCount = (direction:string) => {
     if (direction === "increase" && impostorCount < playerList.length) {
@@ -134,7 +134,7 @@ export default function App() {
 
 
   // using this to have one page that goes to each player instead of one page for everyone
-  const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
+  const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(0);
 
   // this part does the actual navigating
   const nextAndSave = (answer:string) => {
