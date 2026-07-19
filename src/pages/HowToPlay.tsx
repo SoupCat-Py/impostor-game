@@ -65,7 +65,10 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
             </Para>
             <Para>
               This site was made by&nbsp;
-              <Link url={"https://github.com/SoupCat-Py"}>Soup</Link>. Please feel free to report bugs or suggest edits/improvements via GitHub issues :)
+              <Link url={"https://github.com/SoupCat-Py"}>Soup</Link>
+              . Please feel free to report bugs or suggest edits/improvements via&nbsp;
+              <Link url={"https://github.com/SoupCat-Py/impostor-game/issues"}>GitHub Issues</Link>
+              {" :)"}
             </Para>
           </Card>
         </div>
