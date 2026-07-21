@@ -16,7 +16,7 @@ type PageProps = {
 function RemovePlayerButton({ onRemove }: {onRemove: () => void;}) {
   return (
       <button
-          className={"absolute left-0 top-0 bottom-0 py-0.5 px-4 cursor-pointer rounded-lg"}
+          className={"absolute left-0 top-0 bottom-0 py-0.5 px-4 cursor-pointer rounded-lg z-99"}  // need z-99 so focus ring doesn't get covered
           onClick={onRemove}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"

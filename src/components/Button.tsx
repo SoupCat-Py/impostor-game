@@ -24,7 +24,6 @@ export function Button({label, children, primary = false, icon, isDisabled=false
         className={`
           flex justify-center items-center py-3 gap-1 w-full
           rounded-full font-bold
-          focus-visible:outline-3 outline-offset-4 outline-rose-800 dark:outline-yellow-200
           cursor-pointer select-none
           transition duration-75
           ${primary
@@ -74,7 +73,7 @@ export function BackButton({quit, onClickFunction}:buttonProps) {
 
   return (<>
     <button
-        className={"flex flex-row gap-1 items-center justify-start cursor-pointer"}
+        className={"flex flex-row gap-1 items-center justify-start cursor-pointer rounded-sm w-max px-1"}
         onClick={quit ? () => setConfirmShown(true) : onClickFunction}
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"

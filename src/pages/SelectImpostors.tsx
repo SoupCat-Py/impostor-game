@@ -36,6 +36,10 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 	// this is to hide the real impostor count when the user clicks "surprise us"
 	const [countHidden, setCountHidden] = useState<boolean>(false);
 
+	// for the increment buttons so I don't repeat myself too much
+	const incrementButtonClasses = "flex flex-row items-center justify-center min-w-20 text-4xl text-rose-900 dark:text-yellow-100 disabled:text-neutral-300 disabled:dark:text-neutral-500 bg-neutral-50 enabled:hover:bg-neutral-100 dark:bg-taupe-800 enabled:dark:hover:bg-taupe-700 enabled:cursor-pointer z-99"
+	// z-99 is there so that the focus ring on the (-) button stays above the div between the buttons
+
 	return (
 			<PageContainer>
 
@@ -73,7 +77,7 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 							<div className={"flex flex-row gap-1 w-full"}>
 								<button
 										disabled={impostorCount === 1 || countHidden}
-										className={"flex flex-row items-center justify-center min-w-20 rounded-l-3xl rounded-r-md text-4xl text-rose-900 dark:text-yellow-100 disabled:text-neutral-300 disabled:dark:text-neutral-500 bg-neutral-50 enabled:hover:bg-neutral-100 dark:bg-taupe-800 enabled:dark:hover:bg-taupe-700 enabled:cursor-pointer"}
+										className={`rounded-l-3xl rounded-r-md ${incrementButtonClasses}`}
 										onClick={() => callIncrementImpostorCount("decrease")}
 								>
 									<IncrementIcon icon={<path d="M5 12l14 0" />}/>
@@ -83,7 +87,7 @@ export default function SelectImpostorsPage({goToPageLowLevel, callIncrementImpo
 								</div>
 								<button
 										disabled={impostorCount === maxImpostorCount || countHidden}
-										className={"flex flex-row items-center justify-center min-w-20 rounded-r-3xl rounded-l-md text-4xl text-rose-900 dark:text-yellow-100 disabled:text-neutral-300 disabled:dark:text-neutral-500 bg-neutral-50 enabled:hover:bg-neutral-100 dark:bg-taupe-800 enabled:dark:hover:bg-taupe-700 enabled:cursor-pointer"}
+										className={`rounded-r-3xl rounded-l-md ${incrementButtonClasses}`}
 										onClick={() => callIncrementImpostorCount("increase")}
 								>
 									<IncrementIcon icon={<><path d="M12 5l0 14" /><path d="M5 12l14 0" /></>}/>

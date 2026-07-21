@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+/* global font & debug */
 * {
     font-family: jua, sans-serif;
     /* background: rgba(80,100,244,0.1); */
 }
 
+/* global style for focus rings */
+@layer base {
+    *:focus-visible {
+        @apply focus-visible:outline-3 outline-offset-4 outline-rose-800 dark:outline-yellow-200;
+    }
+}
+
+/* topography pattern that doesn't scroll */
 .farBackground {
     width: 100vw;
     height: 100vh;
@@ -24,6 +33,7 @@
     }
 }
 
+/* spin animation ONLY if reduced motion is OFF */
 @media (prefers-reduced-motion: no-preference) {
     .slow-spin {
         animation: 60s infinite slowSpin;

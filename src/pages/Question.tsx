@@ -38,11 +38,16 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
         <PageContainer fixed>
             <InnerContainer>
                 <BackButton quit onClickFunction={() => goToPageLowLevel("Home")}/>
-                <div className="flex flex-col p-4 my-6 h-full max-h-120 items-center justify-center rounded-2xl border-2 border-rose-500 dark:border-yellow-500 bg-neutral-50 dark:bg-taupe-800">
+                <div
+                    className="flex flex-col p-4 my-6 h-full max-h-120 items-center justify-center rounded-2xl border-2 border-rose-500 dark:border-yellow-500 bg-neutral-50 dark:bg-taupe-800 "
+                >
                     {cardHidden
                     ?<div
-                        className="flex flex-col justify-center items-center h-full w-full"
+                        className="flex flex-col justify-center items-center h-full w-full rounded-sm"
                         onClick={toggleCardHidden}
+                        tabIndex={0}  // this makes the div focusable with Tab (0 makes it so it doesn't interrupt the DOM order
+                        role={"button"}
+                        onKeyDown={(e => e.key === "Enter" ? toggleCardHidden() : undefined)}  // triggers same function when you press enter
                     >
                         <Small>Pass the phone to</Small>
                         <H1>{currentPlayerName}</H1>
