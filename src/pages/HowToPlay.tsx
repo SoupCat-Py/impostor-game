@@ -51,6 +51,7 @@ export default function InstructionsPage({goToPageLowLevel}:PageProps) {
           </Card>
           <Card>
             <H1>Gameplay</H1>
+            <Para>NOTE: If you pick "surprise us" for the amount of impostors, it will not re-randomize the amount when you tap "play again" at the end. I'm currently working on that but it's annoyingly difficult lol</Para>
             <H2>Question Phase</H2>
             <Para>When you are given the phone, you will see a card with your name on it. Tap anywhere on the card to reveal your question. Then, you can enter your answer in the text field. Answers may vary from a single number to a full-on story, so anything is possible :)</Para>
             <H2>Accusal Phase</H2>
