@@ -68,7 +68,7 @@
   {
     "id": 14,
     "real": "If you could be any inanimate object, what would you be?",
-    "imp": "What's the most disturbing thing in your bathroom?"
+    "imp": "What's the most disgusting thing in your bathroom?"
   },
   {
     "id": 15,
@@ -210,5 +210,142 @@
     "id": 42,
     "real": "Name a piece of fictional technology you wish you could have?",
     "imp": "What is the most overpowered weapon in anime?"
+  },
+  {
+    "id": 43,
+    "real": "You have to perform one song perfectly to save your life. What song are you picking?",
+    "imp": "What is the worst karaoke song?"
+  },
+  {
+    "id": 44,
+    "real": "If you had to use one emoji to describe your daily life, what would it be?",
+    "imp": "What is your favourite animal emoji?"
+  },
+  {
+    "id": 45,
+    "real": "What show has gone on for way too long?",
+    "imp": "What current show will you never watch no matter what?"
+  },
+  {
+    "id": 46,
+    "real": "What is the worst fictional universe to live in?",
+    "imp": "What is the coolest fictional universe?"
+  },
+  {
+    "id": 47,
+    "real": "What is the riskiest text you have ever sent?",
+    "imp": "What is a pickup line you'd make your worst enemy use?"
+  },
+  {
+    "id": 48,
+    "real": "What lie does everyone tell on the first date?",
+    "imp": "What's a lie you would tell your teacher?"
+  },
+  {
+    "id": 49,
+    "real": "If you were abducted by aliens, why would they choose you?",
+    "imp": "What do you do when your roommates are gone?"
+  },
+  {
+    "id": 50,
+    "real": "What's the biggest scam in life no one wants to admit?",
+    "imp": "What's the worst scam you've fallen for?"
+  },
+  {
+    "id": 51,
+    "real": "If you could nominate yourself for any made-up award, what would it be?",
+    "imp": "What superlative should you have won in high school?",
+    "tip": "Things like 'best xyz'"
+  },
+  {
+    "id": 52,
+    "real": "If your pet(s) could talk, what advice would they give you?",
+    "imp": "What's the worst advice you've ever gotten?"
+  },
+  {
+    "id": 53,
+    "real": "Who is the weirdest person/character who's ever shown up in your dreams?",
+    "imp": "What movie character terrified you as a child?"
+  },
+  {
+    "id": 54,
+    "real": "If someone left a yelp review of your apartment/bedroom, what would they say?",
+    "imp": "How would you describe your school/work bathroom?"
+  },
+  {
+    "id": 55,
+    "real": "What's a good age to buy your first home?",
+    "imp": "Pick a number between 22 and 40."
+  },
+  {
+    "id": 56,
+    "real": "What's the craziest prank someone has ever pulled at your school?",
+    "imp": "What's a prank you've always wanted to do?"
+  },
+  {
+    "id": 57,
+    "real": "At what age should people preferably start puberty?",
+    "imp": "Pick a number from 9 to 15"
+  },
+  {
+    "id": 58,
+    "real": "Which celebrity with a bad rep do you secretly look up to?",
+    "imp": "What celebriy/politician would you put in prison?"
+  },
+  {
+    "id": 59,
+    "real": "What is the best time of day to go to the gym?",
+    "imp": "What's the best time to wake up on a chill weekend?"
+  },
+  {
+    "id": 60,
+    "real": "What's the best item to have during the zombie apocalypse?",
+    "imp": "What's the worst gift to receive?"
+  },
+  {
+    "id": 61,
+    "real": "What celebrity do you want to be stuck on a deserted island with?",
+    "imp": "Who is your least favourite celebrity?"
+  },
+  {
+    "id": 62,
+    "real": "How long do you stay in bed after you wake up?",
+    "imp": "Write any time between 30 minutes and 1 hour."
+  },
+  {
+  	"id": 63,
+  	"real": "What animal would you want by your side in an apocalypse?",
+  	"imp": "What animal have you always wanted to have as a pet?"
+  },
+  {
+  	"id": 64,
+  	"real": "On a scale of 1-10, how attractive do you think you are?",
+  	"imp": "Rate the movie Interstellar on a scale of 1-10.",
+  	"tip": "Pick a random number from 1-10 if you haven't seen it."
+  },
+  {
+  	"id": 65,
+  	"real": "What country has the most attractive people?",
+  	"imp": "What country has the best food?"
+  },
+  {
+  	"id": 66,
+  	"real": "What is the craziest animal you would eat?",
+  	"imp": "What wild animal would you want to have as a pet?"
+  },
+  {
+  	"id": 67,
+  	"real": "What song would you play at your wedding?",
+  	"imp": "What's your pump-up song?"
+  },
+  {
+  	"id": 68,
+  	"real": "What is the best restaurant to get married in?",
+  	"imp": "What restaurant is on your wishlist?"
+  },
+  {
+  	"id": 69,
+  	"real": "Would you slap a toddler for $500",
+  	"imp": "Yes or no?"
   }
 ]
