@@ -57,7 +57,7 @@ export default function QuestionPage({currentPlayerName, currentPlayerIndex, isI
                         <div className="flex flex-col items-center text-center max-w-4/5">
                             <Small>Your question is:</Small>
                             <H2>{`${isImpostor?questions.imp:questions.real}`}</H2>
-                            {(questions.tip)?<Para>{questions.tip}</Para>:null}
+                            {(questions.tip && isImpostor)?<Para>{questions.tip}</Para>:null}
                         </div>
                         <input
                             type="text"
